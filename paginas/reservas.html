@@ -22,29 +22,29 @@
 
 
 
-    <div class="particulas" aria-hidden="true">
-        <img class="flor flor-1" src="../img/decorative-flower-1.png" alt="">
-        <img class="flor flor-2" src="../img/decorative-flower-2.png" alt="">
-        <img class="flor flor-3" src="../img/decorative-flower-3.png" alt="">
-        <img class="flor flor-4" src="../img/decorative-flower-4.png" alt="">
-        <img class="flor flor-5" src="../img/decorative-flower-5.png" alt="">
+    <div class="particles" aria-hidden="true">
+        <img class="flower flower-1" src="../img/decorative-flower-1.png" alt="">
+        <img class="flower flower-2" src="../img/decorative-flower-2.png" alt="">
+        <img class="flower flower-3" src="../img/decorative-flower-3.png" alt="">
+        <img class="flower flower-4" src="../img/decorative-flower-4.png" alt="">
+        <img class="flower flower-5" src="../img/decorative-flower-5.png" alt="">
     </div>
 
     
 
-    <header class="encabezado">
+    <header class="site-header">
 
-        <div class="marca">
+        <div class="brand">
             <h1>Rueda Libre</h1>
             <p>Descubre Medellín sobre dos ruedas</p>
         </div>
 
-        <img class="logo-rueda"
+        <img class="brand-logo"
             src="../img/rueda-libre-logo.png"
             alt="Logo de Rueda Libre">
 
         <nav aria-label="Navegación principal">
-            <ul id="menu">
+            <ul id="main-menu">
                 <li>
                     <a href="../index.html">
                         Inicio
@@ -56,7 +56,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="reservas.html" class="activo" aria-current="page">
+                    <a href="reservas.html" class="active" aria-current="page">
                         Reservas
                     </a>
                 </li>
@@ -74,7 +74,7 @@
 
        
 
-        <section id="horarios">
+        <section id="opening-hours">
 
             <h2>Horarios de atención</h2>
 
@@ -96,7 +96,7 @@
 
         <!-- RESERVAS -->
 
-        <section id="reservas">
+        <section id="bookings">
 
             <h2>Formulario de reservas</h2>
 
@@ -105,7 +105,7 @@
                 tu solicitud de alquiler de bicicleta.
             </p>
 
-            <div class="contenido-reservas">
+            <div class="booking-layout">
 
               
 
@@ -116,44 +116,44 @@
 
                         <legend>Tus datos</legend>
 
-                        <div class="campo-formulario">
-                            <label for="nombre">Nombre completo:</label>
+                        <div class="form-field">
+                            <label for="full-name">Nombre completo:</label>
                             <input type="text"
-                                id="nombre"
-                                name="nombre"
+                                id="full-name"
+                                name="full-name"
                                 placeholder="Escribe tu nombre"
                                 autocomplete="name"
                                 minlength="3"
                                 required>
                         </div>
 
-                        <div class="campo-formulario">
-                            <label for="correo">Correo electrónico:</label>
+                        <div class="form-field">
+                            <label for="email">Correo electrónico:</label>
                             <input type="email"
-                                id="correo"
-                                name="correo"
+                                id="email"
+                                name="email"
                                 autocomplete="email"
                                 required>
                         </div>
 
                         <!-- Dos campos relacionados en la misma fila -->
-                        <div class="fila-campos">
-                            <div class="campo-formulario">
-                                <label for="documento">Documento de identidad:</label>
+                        <div class="form-row">
+                            <div class="form-field">
+                                <label for="document-number">Documento de identidad:</label>
                                 <input type="text"
-                                    id="documento"
-                                    name="documento"
+                                    id="document-number"
+                                    name="document-number"
                                     pattern="[0-9]{6,10}"
                                     title="Ingresa entre 6 y 10 dígitos"
                                     inputmode="numeric"
                                     required>
                             </div>
 
-                            <div class="campo-formulario">
-                                <label for="telefono">Teléfono:</label>
+                            <div class="form-field">
+                                <label for="phone">Teléfono:</label>
                                 <input type="tel"
-                                    id="telefono"
-                                    name="telefono"
+                                    id="phone"
+                                    name="phone"
                                     pattern="3[0-9]{9}"
                                     title="Ingresa 10 dígitos y comienza por 3"
                                     inputmode="numeric"
@@ -168,28 +168,28 @@
 
                         <legend>Fecha y bicicleta</legend>
 
-                        <div class="campo-formulario">
-                            <label for="fecha">Fecha de reserva:</label>
+                        <div class="form-field">
+                            <label for="booking-date">Fecha de reserva:</label>
                             <input type="date"
-                                id="fecha"
-                                name="fecha"
+                                id="booking-date"
+                                name="booking-date"
                                 min="2026-11-01"
                                 max="2026-12-31"
                                 required>
                         </div>
 
-                        <div class="campo-formulario">
-                            <label for="hora">Hora de reserva:</label>
+                        <div class="form-field">
+                            <label for="booking-time">Hora de reserva:</label>
                             <input type="time"
-                                id="hora"
-                                name="hora"
+                                id="booking-time"
+                                name="booking-time"
                                 required>
                         </div>
 
-                        <div class="campo-formulario">
-                            <label for="bicicleta">Tipo de bicicleta:</label>
+                        <div class="form-field">
+                            <label for="bike-type">Tipo de bicicleta:</label>
 
-                            <select id="bicicleta" name="bicicleta" required>
+                            <select id="bike-type" name="bike-type" required>
                                 <option value="">Selecciona una bicicleta</option>
                                 <option value="urbana-clasica">Urbana Clásica</option>
                                 <option value="urbana-plegable">Urbana Plegable</option>
@@ -201,11 +201,11 @@
                             </select>
                         </div>
 
-                        <div class="campo-formulario">
-                            <label for="cantidad">Cantidad de bicicletas:</label>
+                        <div class="form-field">
+                            <label for="bike-count">Cantidad de bicicletas:</label>
                             <input type="number"
-                                id="cantidad"
-                                name="cantidad"
+                                id="bike-count"
+                                name="bike-count"
                                 min="1"
                                 max="6"
                                 required>
@@ -219,7 +219,7 @@
 
                         <label>
                             <input type="radio"
-                                name="plan"
+                                name="rental-plan"
                                 value="1 hora"
                                 required>
                             1 hora
@@ -227,25 +227,25 @@
 
                         <label>
                             <input type="radio"
-                                name="plan"
+                                name="rental-plan"
                                 value="medio dia">
                             Medio día (4 horas)
                         </label>
 
                         <label>
                             <input type="radio"
-                                name="plan"
+                                name="rental-plan"
                                 value="dia completo">
                             Día completo
                         </label>
 
                     </fieldset>
 
-                    <div class="campo-formulario">
+                    <div class="form-field">
 
-                        <label for="recorrido">Recorrido preferido:</label>
+                        <label for="preferred-route">Recorrido preferido:</label>
 
-                        <select id="recorrido" name="recorrido" required>
+                        <select id="preferred-route" name="preferred-route" required>
                             <option value="">Selecciona un recorrido</option>
                             <option value="ninguno">Ninguno (solo alquiler)</option>
                             <option value="ruta-1">Río y Parques</option>
@@ -255,29 +255,29 @@
 
                     </div>
 
-                    <div class="campo-formulario">
+                    <div class="form-field">
 
-                        <label for="comentarios">Comentarios (opcional):</label>
+                        <label for="comments">Comentarios (opcional):</label>
 
-                        <textarea id="comentarios"
-                            name="comentarios" maxlength="300"
+                        <textarea id="comments"
+                            name="comments" maxlength="300"
                             rows="4"
                             placeholder="Cuéntanos si necesitas algo especial"></textarea>
 
                     </div>
 
-                    <label class="aceptacion">
-                        <input type="checkbox" name="acepta" required>
+                    <label class="acceptance">
+                        <input type="checkbox" name="terms-accepted" required>
                         Acepto el tratamiento de mis datos para esta solicitud académica.
                     </label>
 
-                    <p class="nota">
+                    <p class="note">
                         Este formulario es una demostración académica.
                         No guarda ni envía reservas reales.
                         Utiliza información de prueba.
                     </p>
 
-                    <button type="submit" class="boton">
+                    <button type="submit" class="button">
                         Revisar solicitud
                     </button>
 
@@ -302,7 +302,7 @@
                     </ul>
 
                     <p>
-                        <a href="tarifas.html" class="boton">
+                        <a href="tarifas.html" class="button">
                             Consultar tarifas
                         </a>
                     </p>
@@ -319,7 +319,7 @@
 
     <footer>
 
-        <div class="pie-contenedor">
+        <div class="footer-container">
 
             <div>
                 <h2>Rueda Libre</h2>
@@ -343,7 +343,7 @@
 
         </div>
 
-        <p class="derechos">
+        <p class="copyright">
             &copy; 2026 Rueda Libre. Proyecto académico.
         </p>
 
