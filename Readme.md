@@ -125,3 +125,16 @@ Ramael Gonzalez Florez
 RIWI - Clan Tesla - Jornada AM
 
 2026
+
+## Project structure / Estructura
+
+- `index.html`: home page (inicio).
+- `paginas/tarifas.html`: prices and guided routes.
+- `paginas/reservas.html`: academic reservation form.
+- `nocturna/`: Tailwind night cycling campaign.
+- `css/styles.css`: shared styles.
+- `img/`: project images with descriptive kebab-case names.
+- `docs/mini-retos-originales.txt`: original exercise requirements.
+- `bitacora.txt`: learning log and test notes.
+
+**Note / Nota:** Los formularios son demostraciones académicas. No registran reservas reales.
