@@ -224,7 +224,6 @@ El enlace "Compartir por WhatsApp" se fija abajo a la derecha usando
 position:fixed. Su función es compartir, no chatear con un vendedor.
 El CSS tiene una etiqueta "Nuevo" (.new-badge) sobre una tarjeta
 (.bike-card), usando position:relative y position:absolute.
-Publicación en GitHub Pages y URL final: ______________ [POR PROBAR]
 Commit registrado en GitHub: "Rueda libre final" (63cb5310), 15/11/2026.
 La publicación pública del sitio sigue sin verificarse.
 
@@ -338,7 +337,6 @@ El encabezado actual usa flex-wrap y mantiene visibles los enlaces;
 no los oculta en el móvil como pedía literalmente el ejercicio.
 [AJUSTE PENDIENTE] La campaña tiene un diseño OSCURO FIJO, como se
 eligió para este proyecto; no hay dos temas automático claro/oscuro.
-Contraste y aspecto nocturno en DevTools: _________________ [POR PROBAR]
 
 22. Formulario nocturno [HECHO EN CÓDIGO]
 Pide nombre, correo, celular, ruta, día (jueves, viernes o sábado),
