@@ -29,11 +29,9 @@ Organicé los archivos para no mezclar páginas, estilos e imágenes:
 - index.html: portada, servicios, bicicletas y rutas.
  - paginas/tarifas.html: precios y recorridos.
  - paginas/reservas.html: horarios y solicitud de alquiler.
- - css/style.css: estilos compartidos (en esta versión se llama style.css).
- - assets/: fotografías, GIF, logo y bicicletas.
+ - css/styles.css: estilos compartidos.
+ - img/: fotografías, logo y bicicletas.
  - nocturna/: una landing aparte, su prototipo y componentes.
- - portafolio/: presentación del trabajo.
- - pruebas/: ejercicio independiente de Bootstrap.
  - bitacora.txt y README.md: documentación.
 
 Usé <!DOCTYPE html>, lang="es", charset UTF-8, viewport, title y una
@@ -44,7 +42,7 @@ al validar el formulario, sin guardar reservas.
 2. Datos de Network [POR PROBAR EN LIVE SERVER]
 Abro index.html con Live Server, entro a F12 > Network y recargo.
 URL completa: http://127.0.0.1:3000/index.html?vscode-livepreview=true
-Protocolo: htpp
+Protocolo anotado: http (falta comprobar en Live Server)
 Host: 127.0.0.1
 Puerto: 3000
 Ruta: index.html?vscode-livepreview=
@@ -52,24 +50,24 @@ Método del documento:get
 Código de estado: 200 ok
 Prueba 404: escribo una dirección que no existe, por ejemplo
 /promociones-que-no-existen.html.
-Código observado: 
+Código observado: pendiente de comprobar en Live Server.
 Explicación: si recibo 404, el servidor no encontró ese recurso.
 No copio una URL ajena, porque mi equipo puede usar otro puerto.
 
 3. Enlaces entre páginas 
 Origen                         Destino                      Ruta
 index.html                     Tarifas                      paginas/tarifas.html
-index.html                     Reservas                     paginas/reservas.html#formulario
+index.html                     Reservas                     paginas/reservas.html#bookings
 index.html                     Rueda Nocturna               nocturna/index.html
-index.html                     Tarifas: recorridos          paginas/tarifas.html#recorridos
+index.html                     Tarifas: recorridos          paginas/tarifas.html#guided-tours
 paginas/tarifas.html           Inicio                       ../index.html
 paginas/tarifas.html           Reservas                     reservas.html
-paginas/reservas.html          Tarifas                      tarifas.html#alquiler
+paginas/reservas.html          Tarifas                      tarifas.html#rental-prices
 paginas/reservas.html          Inicio                       ../index.html
 nocturna/index.html            Inicio                       ../index.html
 nocturna/index.html            Kit de componentes           componentes.html
 
-Aprendí que ../ sirve para subir una carpeta; #formulario lleva a una
+Aprendí que ../ sirve para subir una carpeta; #bookings lleva a una
 sección de la misma página de destino. El mapa es un enlace externo y el
 botón de WhatsApp sirve para COMPARTIR el proyecto, no para escribir a
 un número real de atención.
@@ -113,41 +111,44 @@ contenedor con overflow-x permite desplazar solo la tabla si no cabe.
 También utilicé <select> para bicicleta y recorrido; <textarea> para
 comentarios; y checkbox para aceptar las condiciones.
 
-El formulario está organizado en "Tus datos", "Tu alquiler" y
-"Confirmación" con fieldset y legend. Cada campo tiene una etiqueta.
+El formulario está organizado en "Tus datos", "Fecha y bicicleta" y
+"Selecciona tu plan" con fieldset y legend. Cada campo tiene una etiqueta.
 Las reglas escritas son: nombre mínimo de 3 caracteres; documento de
 6 a 10 cifras; celular con 10 cifras comenzando por 3; correo válido;
 1 a 6 bicicletas; comentarios máximo 300; plan y aceptación obligatorios.
-La fecha actual del archivo tiene min="2026-11-12" y max="2026-12-31".
-[AJUSTE PENDIENTE] El enunciado original decía desde 2026-11-01;
-se cambió el mínimo para evitar días pasados. Debo confirmar con el
-profesor cuál de las dos reglas se evaluará.
+La fecha del archivo tiene min="2026-11-01" y max="2026-12-31".
+Ese rango coincide con el enunciado de reservas.
 
-7. Registro de pruebas del formulario [POR PROBAR]
+7. Registro de pruebas del formulario [PROBADO CON CONTROLES REPRODUCIDOS EN CHROMIUM]
 Caso | Campo                | Dato de prueba     | Espero que ocurra          | Obtuve
- 1   | Nombre               | vacío              | no permita enviar          | ______
- 2   | Nombre               | "Lu"               | pida 3 caracteres         | ______
- 3   | Documento            | "AB1234"           | rechace letras             | ______
- 4   | Documento            | "12345"            | rechace menos de 6        | ______
- 5   | Correo               | "hola.com"         | rechace el formato        | ______
- 6   | Celular              | "1234567890"       | rechace inicio distinto 3 | ______
- 7   | Celular              | "300123"           | rechace longitud          | ______
- 8   | Cantidad             | 7                  | rechace más de 6          | ______
- 9   | Cantidad             | 0                  | rechace menos de 1        | ______
-10   | Condiciones          | sin marcar         | no permita enviar         | ______
-11   | Comentarios          | más de 300 letras  | limite el texto           | ______
-12   | Datos correctos      | datos de prueba    | muestre aviso de demo     | ______
+ 1   | Nombre               | vacío              | no permita enviar          | Rechazado
+ 2   | Nombre               | "Lu"               | pida 3 caracteres         | Rechazado
+ 3   | Documento            | "AB1234"           | rechace letras             | Rechazado
+ 4   | Documento            | "12345"            | rechace menos de 6        | Rechazado
+ 5   | Correo               | "hola.com"         | rechace el formato        | Rechazado
+ 6   | Celular              | "1234567890"       | rechace inicio distinto 3 | Rechazado
+ 7   | Celular              | "300123"           | rechace longitud          | Rechazado
+ 8   | Cantidad             | 7                  | rechace más de 6          | Rechazado
+ 9   | Cantidad             | 0                  | rechace menos de 1        | Rechazado
+10   | Condiciones          | sin marcar         | no permita enviar         | Rechazado
+11   | Comentarios          | más de 300 letras  | limite el texto           | Aceptó 300
+12   | Datos correctos      | datos de prueba    | muestre aviso de demo     | Mostró alerta
 
-En cada fila debo reemplazar las rayas por lo que realmente vi.
-Después haré el recorrido con Tab, Shift+Tab, flechas, Espacio y Enter:
-orden del foco: __________  ¿se ve el foco?: __________
+Estas 12 pruebas se hicieron en Chromium usando controles reproducidos
+con los mismos atributos HTML del formulario real. Los casos 1 a 10
+fueron rechazados; comentarios se limitó a 300 caracteres; y con datos
+válidos apareció el aviso de demostración. NO comprobé la página completa.
+
+Prueba de Tab, Shift+Tab, flechas, Espacio y Enter en el sitio real:
+orden del foco: pendiente;  ¿se ve el foco?: pendiente visual.
+La regla CSS :focus-visible sí existe.
 
 8. Revisión de accesibilidad [HECHO EN CÓDIGO / POR PROBAR]
 Decisiones que sí puedo señalar en los archivos:
 - Idioma lang="es" para indicar el idioma de lectura.
 - Un h1 y un main por archivo HTML de esta entrega.
-- Alt descriptivo en las fotos y alt vacío en el logo que acompaña
-  al nombre visible de la marca.
+- Alt descriptivo en las fotos y el logo. Las flores decorativas usan
+  alt="" dentro de un contenedor con aria-hidden="true".
 - Enlaces con nombres comprensibles, como "Consultar tarifas".
 - Las etiquetas label están asociadas a sus campos mediante for e id.
 - aria-current="page" distingue el enlace del menú actual.
@@ -156,8 +157,8 @@ Decisiones que sí puedo señalar en los archivos:
   los enlaces externos que lo necesitan.
 
 Hallazgos y medidas de revisión (cinco como mínimo):
-1) Un logo junto al nombre puede leerse dos veces: usé alt="" cuando
-   el enlace ya incluye el nombre visible. [HECHO EN CÓDIGO]
+1) Las flores son decorativas y no necesitan descripción:
+   tienen alt="" dentro de aria-hidden="true". [HECHO EN CÓDIGO]
 2) Las rutas entre carpetas se confunden fácilmente: organicé enlaces
    relativos, no rutas de Windows. [HECHO EN CÓDIGO]
 3) Las imágenes grandes pueden sobresalir: max-width:100% y height:auto.
@@ -177,25 +178,24 @@ requiere 4,5:1 y texto grande 3:1.
 
 Combinación                 Relación aprox.    Evaluación
 Blanco / Verde #1E7A4F          5,31:1         apta normal
-Blanco / Naranja #E58B1B        2,61:1         no apta
-Azul / Naranja #E58B1B          6,12:1         apta normal
+Blanco / Naranja #F39A2B        2,22:1         no apta
+Azul / Naranja #F39A2B          7,20:1         apta normal
 Azul / Crema #FAF6EF           14,83:1         apta normal
 Texto #344354 / Crema           9,39:1         apta normal
 Verde / Crema                   4,93:1         apta normal
-Naranja / Crema                 2,42:1         no apta
+Naranja / Crema                 2,06:1         no apta
 Blanco / Azul #14213D          15,97:1         apta normal
 
 Mi mapa: crema de fondo; azul oscuro para títulos; #344354 para texto;
 verde para botones con texto blanco; naranja para detalles y para botones
 con texto oscuro. El amarillo farol se usa como acento sobre fondo oscuro
-en Nocturna. El naranja de esta versión (#E58B1B) es diferente al color
-original del enunciado (#F39A2B): es una decisión visual de esta versión
-alternativa, no una medición de otro proyecto.
+en Nocturna. El naranja actual es #F39A2B. Sobre blanco o crema no tiene contraste
+suficiente para texto normal, por lo que conviene usar texto oscuro.
 
 DÍA 3. CSS, CASCADA Y PUBLICACIÓN
 
 10. Cómo organicé los estilos [HECHO EN CÓDIGO]
-El archivo css/style.css reúne variables en :root y estilos compartidos.
+El archivo css/styles.css reúne variables en :root y estilos compartidos.
 Usé Montserrat para títulos y Open Sans para párrafos, ambas con fuentes
 de respaldo. Agrupé reglas para menús, botones, tarjetas, tablas,
 formularios y el pie. Evité crear clases cuando podía reutilizar una.
@@ -207,9 +207,9 @@ Herencia que espero comprobar en DevTools:
 
 
 11. Especificidad que aprendí
-Un selector como #menu a pesa (1,0,1), mientras .activo pesa (0,1,0).
+Un selector como #main-menu a pesa (1,0,1), mientras .active pesa (0,1,0).
 Si ambas reglas intentan cambiar el mismo color, la primera gana. Por
-eso en mi CSS se usa #menu a.activo para el enlace seleccionado, sin
+eso en mi CSS se usa #main-menu a.active para el enlace seleccionado, sin
 !important. Compruebo con el panel Styles cuál regla queda aplicada.
 
 
@@ -222,11 +222,11 @@ le añade relleno. Falta anotar las medidas reales de Computed:
 13. Posicionamiento y entrega
 El enlace "Compartir por WhatsApp" se fija abajo a la derecha usando
 position:fixed. Su función es compartir, no chatear con un vendedor.
-[AJUSTE PENDIENTE] No identifiqué en el inicio alternativo una etiqueta
-"Nuevo" flotante sobre la bicicleta eléctrica; si se exige literalmente,
-hay que agregarla con position:relative/absolute.
+El CSS tiene una etiqueta "Nuevo" (.new-badge) sobre una tarjeta
+(.bike-card), usando position:relative y position:absolute.
 Publicación en GitHub Pages y URL final: ______________ [POR PROBAR]
-Commit de lanzamiento y hash: _________________________ [POR PROBAR]
+Commit registrado en GitHub: "Rueda libre final" (63cb5310), 15/11/2026.
+La publicación pública del sitio sigue sin verificarse.
 
 Resumen de la semana: empecé por organizar páginas, aprendí a conectar
 rutas, construí las tablas y el formulario y mejoré la forma de leer
@@ -251,12 +251,14 @@ reorganizarse sin escribir una regla para cada modelo.
 Dentro de cada tarjeta uso Flexbox en columna para llevar el botón abajo.
 
 15. Qué espero observar al cambiar el ancho [POR PROBAR EN DEVTOOLS]
-En el CSS principal: desde 700 px cambian portada, galería y pie;
-desde 950 px el formulario y el panel lateral quedan en 2fr/1fr.
+En el CSS principal: desde 768 px cambian portada, galería y pie;
+desde 1200 px el formulario y el panel lateral quedan en 2fr/1fr.
 La flota depende del espacio con auto-fit: no tiene un número fijo.
 
 Ventana      Flota (columnas reales)   Menú/pie: ¿qué cambió?
-la imagen se estiro de manera correcta
+360 px       pendiente visual          pendiente visual
+768 px       pendiente visual          pendiente visual
+1280 px      pendiente visual          pendiente visual
 Tres situaciones que quise evitar con el código:
 A) Menú muy ancho: flex-wrap permite saltar enlaces a otra línea.
 B) Tarjetas fuera de pantalla: Grid permite reorganizarse e imágenes
@@ -264,17 +266,16 @@ B) Tarjetas fuera de pantalla: Grid permite reorganizarse e imágenes
 C) Tablas demasiado anchas: overflow-x:auto limita el desplazamiento
    al contenedor de la tabla.
 En DevTools debo anotar si ocurrieron y si la solución funcionó:
-A __ocurrio____  B _________  C _________
+A pendiente visual   B pendiente visual   C pendiente visual
 
 Pruebas requeridas de 360, 768 y 1280 px:
-360 px: ________paso __   768 px: __paso________  1280 px: __paso________
-[AJUSTE PENDIENTE] Los puntos de corte actuales son 700 y 950 px,
-no los 768 y 1200 px propuestos literalmente en el reto original.
+360 px: pendiente visual   768 px: pendiente visual   1280 px: pendiente visual
+[HECHO EN CÓDIGO] Los cortes son 768 y 1200 px; falta probar la vista real.
 
 16. Práctica corta con Bootstrap
 El profesor permitió omitir el desarrollo completo con Bootstrap.
-Como ejercicio opcional dejé pruebas/catalogo-bootstrap.html, con
-una fila de tres tarjetas usando container, row, col, card y btn.
+Usé un aviso con las clases alert alert-warning de Bootstrap 5.3.3
+en nocturna/index.html; el diseño general sigue con Tailwind CSS.
 No instalé menús colapsables, carrusel automático, mensajes por campo
 ni modal de políticas en las páginas principales: no voy a afirmar
 que esos MiniRetos específicos están terminados.
@@ -328,10 +329,10 @@ La cuadrícula de rutas usa grid + sm:grid-cols-2 + lg:grid-cols-3;
 los pasos usan sm:grid-cols-2 y lg:grid-cols-4.
 
 Ancho      Rutas previstas   Pasos previstos   Comprobación real
-360 px         1                 1             _____  1______
-768 px         2                 2             _______2____
-1024 px        3                 4             ______ 4 _____
-1280 px        3                 4             _______4____
+360 px         1                 1             pendiente visual
+768 px         2                 2             pendiente visual
+1024 px        3                 4             pendiente visual
+1280 px        3                 4             pendiente visual
 
 El encabezado actual usa flex-wrap y mantiene visibles los enlaces;
 no los oculta en el móvil como pedía literalmente el ejercicio.
@@ -365,9 +366,9 @@ ENTREGA — REVISIÓN FINAL Y DEMOSTRACIÓN
 ============================================================
 
 23. Lista de control antes de entregar
-[HECHO EN CÓDIGO] Ocho HTML con un h1 y un main por archivo.
-[HECHO EN CÓDIGO] El análisis anterior comprobó 80 referencias
-locales sin encontrar rutas a archivos inexistentes.
+[VERIFICADO EN CÓDIGO] Seis HTML con un h1 y un main por archivo.
+[VERIFICADO EN CÓDIGO] Comprobé 78 referencias a archivos locales
+y 24 anclas internas sin rutas o destinos inexistentes.
 [HECHO EN CÓDIGO] Tres páginas principales conectadas y sección nocturna.
 [HECHO EN CÓDIGO] Dos tablas accesibles y dos formularios de prueba.
 [HECHO EN CÓDIGO] Reglas responsive y foco visible declarados.
@@ -388,6 +389,48 @@ reglas de accesibilidad. Mi objetivo es explicar por qué elegí cada
 etiqueta y cada estilo, no memorizar código que no comprendo.
 
 FIN DE LA BITÁCORA
-IMPORTANTE: Los espacios pendientes se completan con resultados propios.
-Dejar un resultado en blanco es más correcto que atribuirse pruebas
-que todavía no se han realizado.
+IMPORTANTE: Registré las comprobaciones automáticas por separado de
+las pruebas visuales todavía pendientes. No inventé observaciones.
+
+
+============================================================
+PRUEBAS AUTOMÁTICAS — 15 DE NOVIEMBRE DE 2026
+============================================================
+
+Revisión directa del repositorio:
+- 6 archivos HTML; cada uno tiene un h1, un main y meta description.
+- 78 referencias a archivos locales: ninguna ruta rota.
+- 24 enlaces internos con #: todos apuntan a elementos existentes.
+- 37 usos de img en los HTML; ninguno carece del atributo alt.
+- 15 flores tienen alt vacío porque solo decoran el fondo.
+- 2 tablas de tarifas tienen caption, thead y tbody; encontré 15 scope.
+- Existen estilos :focus-visible y cortes responsive de 768 y 1200 px.
+- Rueda Nocturna combina Tailwind CDN con un aviso de Bootstrap.
+
+Prueba de validaciones:
+- Chromium en modo headless, con controles reproducidos desde los
+  atributos de paginas/reservas.html, no con la página completa.
+- Casos 1 al 10: rechazados según lo esperado.
+- Caso 11: al intentar escribir 301 caracteres quedaron 300.
+- Caso 12: los datos correctos mostraron el aviso de demostración.
+
+Contraste calculado con los colores reales del CSS:
+- Blanco / verde #1E7A4F: 5,31:1 (cumple texto normal).
+- Blanco / naranja #F39A2B: 2,22:1 (no cumple texto normal).
+- Azul #14213D / naranja #F39A2B: 7,20:1 (cumple).
+- Azul / crema #FAF6EF: 14,83:1 (cumple).
+- Texto #344354 / crema: 9,39:1 (cumple).
+- Verde / crema: 4,93:1 (cumple).
+- Naranja / crema: 2,06:1 (no cumple).
+- Blanco / azul #14213D: 15,97:1 (cumple).
+- Amarillo #FFD166 / azul nocturno #1D2F45: 9,43:1 (cumple).
+
+Pruebas que siguen pendientes en el sitio completo:
+- Abrirlo con Live Server y registrar el 200 y el 404 observados.
+- Navegar con teclado y comprobar el foco visible.
+- Ver la distribución y posibles desbordamientos a 360, 768, 1024 y 1280 px.
+- Medir las dimensiones de las tarjetas en DevTools > Computed.
+- Verificar el aspecto final de los colores y del aviso de Bootstrap.
+- Confirmar una URL pública de GitHub Pages si el sitio está publicado.
+
+No se presentan estas pruebas pendientes como si estuvieran hechas.
