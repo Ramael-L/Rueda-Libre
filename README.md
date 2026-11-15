@@ -138,3 +138,14 @@ RIWI - Clan Tesla - Jornada AM
 - `bitacora.txt`: learning log and test notes.
 
 **Note / Nota:** Los formularios son demostraciones académicas. No registran reservas reales.
+
+
+## Nombres de código / Code naming
+
+Las clases CSS, variables, identificadores HTML y nombres de los controles siguen la convención en inglés y kebab-case, como `services-grid`, `booking-layout` y `--route-green`. Los textos visibles permanecen en español para los visitantes.
+
+Las cinco imágenes decorativas usan `alt=""` dentro de `aria-hidden="true"`: no son imágenes informativas y por eso no necesitan una descripción leída por lectores de pantalla.
+
+## Comprobaciones pendientes de navegador
+
+Probar con Live Server: enlaces de navegación, envío de formularios con datos inválidos y válidos, navegación con Tab, visualización a 360/768/1280 px y publicación final. Los formularios son demostraciones sin backend.

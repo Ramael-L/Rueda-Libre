@@ -8,13 +8,10 @@
     <meta name="description" content="Recorridos nocturnos en bicicleta por Medellín.">
 
     <title>Rueda Nocturna | Rueda Libre</title>
-
-    <!-- Un solo componente de Bootstrap: aviso informativo. -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
-<body class="bg-white text-white dark:bg-[#101d32]  " >
+<body class="bg-[#101d32] text-white" >
 
     <header class="bg-[#1d2f45] p-5">
 
@@ -26,10 +23,10 @@
 
             <nav aria-label="Navegación nocturna">
                 <ul class="flex flex-wrap gap-5">
-                    <li><a href="#inicio" class="hover:text-[#FFD166]">Inicio</a></li>
-                    <li><a href="#rutas" class="hover:text-[#FFD166]">Rutas</a></li>
-                    <li><a href="#pasos" class="hover:text-[#FFD166]">Cómo funciona</a></li>
-                    <li><a href="#inscripcion" class="hover:text-[#FFD166]">Inscripción</a></li>
+                    <li><a href="#home" class="hover:text-[#FFD166]">Inicio</a></li>
+                    <li><a href="#routes" class="hover:text-[#FFD166]">Rutas</a></li>
+                    <li><a href="#steps" class="hover:text-[#FFD166]">Cómo funciona</a></li>
+                    <li><a href="#registration" class="hover:text-[#FFD166]">Inscripción</a></li>
                 </ul>
             </nav>
 
@@ -41,7 +38,7 @@
 
         <!-- PRESENTACIÓN -->
 
-        <section id="inicio" class="bg-[#002574] px-5 py-20 text-center">
+        <section id="home" class="bg-[#002574] px-5 py-20 text-center">
 
             <div class="mx-auto max-w-4xl">
 
@@ -62,7 +59,7 @@
                     3 rutas disponibles | Desde $55.000
                 </p>
 
-                <a href="#inscripcion"
+                <a href="#registration"
                     class="inline-block rounded-lg bg-[#FFD166] px-8 py-3 font-bold text-[#1d2f45] hover:bg-white">
                     Inscríbete ahora
                 </a>
@@ -73,7 +70,7 @@
 
         <!-- RUTAS NOCTURNAS -->
 
-        <section id="rutas" class="px-5 py-16">
+        <section id="routes" class="px-5 py-16">
 
             <div class="mx-auto max-w-6xl">
 
@@ -111,7 +108,7 @@
 
                             <p class="text-2xl font-bold">$55.000</p>
 
-                            <a href="#inscripcion"
+                            <a href="#registration"
                                 class="inline-block rounded-lg bg-[#1e7a4f] px-6 py-3 font-semibold hover:bg-[#17613f]">
                                 Inscríbete
                             </a>
@@ -148,7 +145,7 @@
 
                             <p class="text-2xl font-bold">$75.000</p>
 
-                            <a href="#inscripcion"
+                            <a href="#registration"
                                 class="inline-block rounded-lg bg-[#1e7a4f] px-6 py-3 font-semibold hover:bg-[#17613f]">
                                 Inscríbete
                             </a>
@@ -185,7 +182,7 @@
 
                             <p class="text-2xl font-bold">$95.000</p>
 
-                            <a href="#inscripcion"
+                            <a href="#registration"
                                 class="inline-block rounded-lg bg-[#1e7a4f] px-6 py-3 font-semibold hover:bg-[#17613f]">
                                 Inscríbete
                             </a>
@@ -202,7 +199,7 @@
 
         <!-- preguntas frecuentes sobre rueda nocturna -->
 
-        <section id="pasos" class="bg-[#1d2f45] px-5 py-16">
+        <section id="steps" class="bg-[#1d2f45] px-5 py-16">
 
             <div class="mx-auto max-w-6xl">
 
@@ -240,7 +237,7 @@
 
         <!-- formulario para la inscripcion -->
 
-        <section id="inscripcion" class="px-5 py-16">
+        <section id="registration" class="px-5 py-16">
 
             <div class="mx-auto max-w-4xl">
 
@@ -253,8 +250,8 @@
                     de inscripción.
                 </p>
 
-                <!-- Alerta básica de Bootstrap adaptada a nuestros colores. -->
-                <div class="alert" role="note"
+                <!-- Aviso informativo con Tailwind. -->
+                <div  role="note"
                     style="background: #1d2f45; color: white; border: 1px solid #FFD166;">
                     Recuerda llevar casco, luces y elementos reflectivos al recorrido.
                 </div>
@@ -274,33 +271,33 @@
                         <div class="grid gap-5 md:grid-cols-2">
 
                             <div>
-                                <label for="nombre" class="mb-2 block">
+                                <label for="full-name" class="mb-2 block">
                                     Nombre completo
                                 </label>
 
-                                <input type="text" id="nombre" name="nombre"
+                                <input type="text" id="full-name" name="full-name"
                                     minlength="3" autocomplete="name" required
                                     placeholder="Escribe tu nombre"
                                     class="w-full rounded-lg bg-white p-3 text-gray-900">
                             </div>
 
                             <div>
-                                <label for="correo" class="mb-2 block">
+                                <label for="email" class="mb-2 block">
                                     Correo electrónico
                                 </label>
 
-                                <input type="email" id="correo" name="correo"
+                                <input type="email" id="email" name="email"
                                     autocomplete="email" required
                                     placeholder="correo@ejemplo.com"
                                     class="w-full rounded-lg bg-white p-3 text-gray-900">
                             </div>
 
                             <div>
-                                <label for="celular" class="mb-2 block">
+                                <label for="phone" class="mb-2 block">
                                     Número de celular
                                 </label>
 
-                                <input type="tel" id="celular" name="celular"
+                                <input type="tel" id="phone" name="phone"
                                     pattern="3[0-9]{9}" maxlength="10"
                                     inputmode="numeric" autocomplete="tel" required
                                     title="Ingresa 10 números y comienza por 3"
@@ -323,11 +320,11 @@
                         <div class="grid gap-5 md:grid-cols-2">
 
                             <div>
-                                <label for="ruta" class="mb-2 block">
+                                <label for="selected-route" class="mb-2 block">
                                     Selecciona una ruta
                                 </label>
 
-                                <select id="ruta" name="ruta" required
+                                <select id="selected-route" name="selected-route" required
                                     class="w-full rounded-lg bg-white p-3 text-gray-900">
 
                                     <option value="">Selecciona una opción</option>
@@ -339,11 +336,11 @@
                             </div>
 
                             <div>
-                                <label for="dia" class="mb-2 block">
+                                <label for="selected-day" class="mb-2 block">
                                     Día de salida
                                 </label>
 
-                                <select id="dia" name="dia" required
+                                <select id="selected-day" name="selected-day" required
                                     class="w-full rounded-lg bg-white p-3 text-gray-900">
 
                                     <option value="">Selecciona un día</option>
@@ -355,22 +352,22 @@
                             </div>
 
                             <div>
-                                <label for="acompanantes" class="mb-2 block">
+                                <label for="companions" class="mb-2 block">
                                     Número de acompañantes
                                 </label>
 
-                                <input type="number" id="acompanantes"
-                                    name="acompanantes" min="0" max="3" required
+                                <input type="number" id="companions"
+                                    name="companions" min="0" max="3" required
                                     placeholder="De 0 a 3"
                                     class="w-full rounded-lg bg-white p-3 text-gray-900">
                             </div>
 
                             <div>
-                                <label for="experiencia" class="mb-2 block">
+                                <label for="experience" class="mb-2 block">
                                     Nivel de experiencia
                                 </label>
 
-                                <select id="experiencia" name="experiencia" required
+                                <select id="experience" name="experience" required
                                     class="w-full rounded-lg bg-white p-3 text-gray-900">
 
                                     <option value="">Selecciona tu nivel</option>
@@ -396,14 +393,14 @@
                         <div class="flex flex-wrap gap-8">
 
                             <label class="flex items-center gap-2">
-                                <input type="radio" name="bicicleta_propia"
+                                <input type="radio" name="own-bike"
                                     value="si" required
                                     class="h-4 w-4 accent-yellow-400">
                                 Sí
                             </label>
 
                             <label class="flex items-center gap-2">
-                                <input type="radio" name="bicicleta_propia"
+                                <input type="radio" name="own-bike"
                                     value="no"
                                     class="h-4 w-4 accent-yellow-400">
                                 No
@@ -423,7 +420,7 @@
 
                         <label class="flex items-start gap-3">
 
-                            <input type="checkbox" name="condiciones" required
+                            <input type="checkbox" name="terms-accepted" required
                                 class="mt-1 h-4 w-4 accent-yellow-400">
 
                             <span>
