@@ -483,3 +483,33 @@ Comprobación local con Chromium sobre CSS compilado: 360, 768 y 1280 px,
 con dos esquemas de color; columnas y colores se aplicaron correctamente.
 Pendiente: comprobar GitHub Pages completo (imágenes, enlaces, formularios)
 y anotar resultados de W3C, Network y DevTools del navegador del alumno.
+
+============================================================
+16 NOVIEMBRE 2026 - POR QUÉ USO output.css EN RUEDA NOCTURNA
+============================================================
+
+Cuando publiqué Rueda Nocturna, el script de Tailwind por CDN no siempre
+cargaba y la página aparecía sin sus colores ni tarjetas. Para resolverlo
+incluí nocturna/output.css en el repositorio. Las tres páginas de
+nocturna/ lo usan con un enlace relativo.
+
+output.css no es una hoja que deba escribir regla por regla. Tailwind la
+genera a partir de las clases que utilicé en los HTML. Tiene más reglas
+de las que escribiría a mano porque incluye los estilos base, espaciados,
+colores y cambios responsive. Organicé las líneas y añadí una explicación
+para que sea más fácil leerlo, sin cambiar las propiedades originales.
+
+Entendí que el HTML semántico organiza el contenido con etiquetas como
+main, section, article, form, fieldset y label. El CSS se encarga de
+cómo se ve. Tener los estilos fuera del HTML me ayuda a no mezclar ambas
+cosas y a reutilizar el mismo archivo en index, componentes y prototipo.
+
+¿Puedo poner todo en index.html? Sí, con un bloque style, pero es menos
+ordenado y los otros dos HTML necesitarían sus propias reglas. Usar el
+archivo CSS también evita depender de que el navegador ejecute el script
+externo de Tailwind para mostrar el diseño.
+
+IMPORTANTE: Si en el futuro cambio clases de Tailwind o añado otras,
+tendré que volver a generar output.css para incluir las clases nuevas.
+El tiempo de estas correcciones no fue medido con cronómetro; no invento
+un tiempo de los MiniRetos ni afirmo haber repetido la validación W3C.

@@ -59,3 +59,7 @@ Tailwind se carga desde `nocturna/output.css`, incluido en el repositorio. Boots
 Los enlaces y la estructura pueden revisarse en el código. Antes de dar la entrega por comprobada todavía hay que verificar en navegador: modo claro/oscuro, teclado, campos válidos e inválidos, 360/768/1280 px, W3C y GitHub Pages. Las capturas y los resultados del cronómetro se añadirán solo después de realizarlos.
 
 **Autor:** Ramael Gonzalez Florez — Clan Tesla, jornada AM — Riwi 2026.
+
+## Por qué existe `nocturna/output.css`
+
+Tailwind genera estilos a partir de las clases del HTML. Dejé el resultado en `nocturna/output.css` para que GitHub Pages muestre el diseño aunque el CDN de Tailwind no cargue. El archivo está formateado para que se pueda leer; no cambié las clases ni los colores. Las tres páginas de `nocturna/` comparten esta hoja. Si añado nuevas clases, debo volver a compilar Tailwind.
