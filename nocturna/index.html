@@ -12,10 +12,23 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="output.css">
+    <!-- Tailwind desde CDN, como en los ejercicios de clase. -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Open Sans', 'sans-serif'],
+                        heading: ['Montserrat', 'sans-serif']
+                    }
+                }
+            }
+        };
+    </script>
 </head>
 
-<body class="nocturna-theme bg-[#e6eeea] dark:bg-[#101c2b] text-[#1d3440] dark:text-[#eaf3f2]" >
+<body class="bg-[#e6eeea] dark:bg-[#101c2b] text-[#1d3440] dark:text-[#eaf3f2]" >
 
     <header class="bg-[#c7dad4] dark:bg-[#243b4c] p-5">
 

@@ -12,10 +12,10 @@ prefiero explicar con ejemplos de mi propia página.
 [AJUSTE PENDIENTE] = todavía hay una diferencia con el enunciado.
 
 NOTA SOBRE EL ALCANCE
-El profesor autorizó practicar Tailwind mediante CDN. Para publicar corregí
-la carga de estilos y generé nocturna/output.css con Tailwind CSS, que ahora
-viaja junto a los HTML. Bootstrap sigue siendo una práctica mínima: un badge.
-No presento como realizado un carrusel, modal o compilación con --watch.
+El profesor autorizó usar Tailwind mediante CDN. Volví a ese método
+después de probar temporalmente un archivo CSS compilado para GitHub Pages.
+La versión final utiliza las clases de Tailwind en HTML y su enlace CDN.
+Bootstrap sigue siendo una práctica mínima: un badge.
 
 ============================================================
 SEMANA 1 — DE LAS PRIMERAS PÁGINAS A UNA WEB ORDENADA
@@ -354,7 +354,7 @@ Uso recomendado     maquetas y componentes       una landing con estilo propio
 
 Para esta versión mantendría CSS propio en las páginas principales y
 Tailwind en Nocturna, porque me resulta más sencillo identificar la
-responsabilidad de cada herramienta. Tailwind utiliza CSS local;
+responsabilidad de cada herramienta. En una prueba usé CSS local;
 Bootstrap sigue usando CDN para su badge. Si el profesor
 pide cifras reales, hay que medir recursos con DevTools > Network.
 
@@ -403,7 +403,7 @@ Revisión directa del repositorio:
   mediante aria-hidden="true" porque son adornos.
 - 2 tablas de tarifas tienen caption, thead y tbody; encontré 15 scope.
 - Existen estilos :focus-visible y cortes responsive de 768 y 1200 px.
-- Rueda Nocturna usa Tailwind compilado en output.css y un badge de Bootstrap.
+- En una versión temporal Rueda Nocturna usó CSS compilado y un badge de Bootstrap.
 
 Prueba de validaciones:
 - Chromium en modo headless, con controles reproducidos desde los
@@ -444,7 +444,7 @@ continúa entre 0 y 3. La inscripción solo muestra un mensaje de prueba.
 MiniReto 10. Las tres páginas principales ya tienen enlace a Rueda Nocturna.
 Desde la landing se puede regresar al inicio y ahora también ir a Reservas.
 El aviso pequeño de Bootstrap se mantiene en la landing; el resto se diseña
-con Tailwind compilado en output.css para la publicación.
+con Tailwind CDN al terminar la entrega, tras probar CSS compilado.
 
 MiniReto 11. Añadí tres planes con los precios del enunciado. Usé Grid para
 las columnas y Flexbox para dejar los botones abajo. Pareja tiene un borde
@@ -469,10 +469,10 @@ PENDIENTE DE COMPROBAR EN VS CODE / DEVTOOLS:
 - Ensayar la demo con cronómetro y anotar el comentario del compañero.
 
 No se afirma que se hizo el carrusel completo de Bootstrap: se practicó
-un badge. El archivo output.css se añadió después para publicar los estilos.
+un badge. output.css se probó temporalmente y después se retiró.
 
 
-ACTUALIZACIÓN DE PUBLICACIÓN — CSS ESTÁTICO (16 NOV 2026)
+PRUEBA TEMPORAL DE PUBLICACIÓN — CSS ESTÁTICO (16 NOV 2026)
 Problema detectado: al abrir GitHub Pages algunos estilos no aparecían
 porque el cargador JavaScript de Tailwind desde CDN no siempre se ejecutaba.
 Solución aplicada: compilé las utilidades usadas en la landing, el kit
@@ -485,7 +485,7 @@ Pendiente: comprobar GitHub Pages completo (imágenes, enlaces, formularios)
 y anotar resultados de W3C, Network y DevTools del navegador del alumno.
 
 ============================================================
-16 NOVIEMBRE 2026 - POR QUÉ USO output.css EN RUEDA NOCTURNA
+16 NOVIEMBRE 2026 - POR QUÉ PROBÉ output.css (LUEGO RETIRADO)
 ============================================================
 
 Cuando publiqué Rueda Nocturna, el script de Tailwind por CDN no siempre
@@ -513,3 +513,41 @@ IMPORTANTE: Si en el futuro cambio clases de Tailwind o añado otras,
 tendré que volver a generar output.css para incluir las clases nuevas.
 El tiempo de estas correcciones no fue medido con cronómetro; no invento
 un tiempo de los MiniRetos ni afirmo haber repetido la validación W3C.
+
+============================================================
+16 DE NOVIEMBRE DE 2026 - VOLVÍ A TAILWIND POR CDN
+============================================================
+
+Inconveniente:
+Al abrir las páginas publicadas, algunas veces no aparecían los colores,
+los espacios ni las tarjetas. El HTML y las imágenes sí se mostraban.
+Es posible que no se estuviera cargando el script de Tailwind, pero
+no confirmé la causa exacta con Network o Console.
+
+Qué intentamos:
+Primero probé guardar los estilos generados en nocturna/output.css.
+Así la página no dependía del script externo. Funcionó como alternativa
+técnica, pero el archivo era muy largo y no correspondía a la forma en
+que aprendí Tailwind en clase.
+
+Qué decidí al final:
+Volví a colocar <script src="https://cdn.tailwindcss.com"></script>
+en el head de los tres HTML de nocturna. También recuperé la pequeña
+configuración de fuentes y eliminé output.css del repositorio.
+Conservé el formulario, los planes, los colores, el modo oscuro y
+los enlaces a Rueda Libre y Reservas.
+
+Qué aprendí:
+Con el CDN puedo escribir clases como p-6, grid, md:grid-cols-2 y
+dark:bg-[#101c2b] en HTML sin compilar un archivo adicional.
+Eso facilita que explique mis decisiones durante la sustentación.
+El CDN necesita conexión y que el navegador pueda cargar el script.
+Si vuelve a fallar, abriré F12 > Network y Console, recargaré y
+revisaré si el script tiene algún error. No puedo asegurar que
+volver al CDN elimine definitivamente el problema inicial.
+
+Estado de pruebas:
+Revisé la estructura del código y las referencias al CDN.
+Queda pendiente comprobar en el navegador de la entrega que
+cargue correctamente, probar el formulario y revisar GitHub Pages.
+No registro tiempos ni pruebas que no haya medido.

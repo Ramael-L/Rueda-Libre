@@ -23,11 +23,11 @@ Proyecto de práctica de HTML, CSS y Tailwind CSS que hice en Riwi. La idea es m
 
 - HTML semántico para ordenar el contenido.
 - CSS, Flexbox y Grid en las páginas principales.
-- Tailwind CSS compilado en `nocturna/output.css`: colores, espacios, tarjetas, `sm:`, `md:`, `lg:` y `dark:`.
+- Tailwind CSS por CDN en Rueda Nocturna: clases para colores, espacios, tarjetas, `sm:`, `md:`, `lg:` y `dark:`.
 - Bootstrap: un pequeño `badge` de práctica en la landing, no todo el diseño.
 - Git y GitHub para guardar los avances.
 
-En clase utilizamos Tailwind con CDN por indicación del profesor. Para corregir el problema de estilos al publicar, ahora el proyecto incluye **`nocturna/output.css` compilado con Tailwind CSS**, sin depender del script CDN en el navegador. No requiere compilar nada al abrirlo. Los colores del sitio principal y de la campaña nocturna comparten la identidad verde y azul; la landing agrega amarillo para destacar las acciones. Se usan Montserrat y Open Sans.
+En clase utilizamos Tailwind por CDN, como indicó el profesor. En la versión final volvimos a ese método sencillo: el HTML carga Tailwind desde un enlace y usa las clases directamente, sin archivos CSS generados. Hubo una prueba temporal con `output.css`, documentada en la bitácora. Los colores del sitio principal y de la campaña nocturna comparten la identidad verde y azul; la landing agrega amarillo para destacar las acciones. Se usan Montserrat y Open Sans.
 
 ## Rueda Nocturna
 
@@ -52,7 +52,7 @@ Elegí Tailwind para la landing porque me facilita poner espacios, colores y col
 3. Abre `index.html` con Live Server.
 4. Entra en Rueda Nocturna desde el menú.
 
-Tailwind se carga desde `nocturna/output.css`, incluido en el repositorio. Bootstrap y las fuentes usan CDN; el badge tiene un estilo de respaldo local.
+Tailwind, Bootstrap y las fuentes utilizan enlaces externos, así que se necesita conexión a internet para ver todos los estilos.
 
 ## Comprobaciones finales
 
@@ -60,6 +60,8 @@ Los enlaces y la estructura pueden revisarse en el código. Antes de dar la entr
 
 **Autor:** Ramael Gonzalez Florez — Clan Tesla, jornada AM — Riwi 2026.
 
-## Por qué existe `nocturna/output.css`
+## Cómo trabajé Tailwind
 
-Tailwind genera estilos a partir de las clases del HTML. Dejé el resultado en `nocturna/output.css` para que GitHub Pages muestre el diseño aunque el CDN de Tailwind no cargue. El archivo está formateado para que se pueda leer; no cambié las clases ni los colores. Las tres páginas de `nocturna/` comparten esta hoja. Si añado nuevas clases, debo volver a compilar Tailwind.
+Primero usé el CDN de Tailwind y escribí clases directamente en los HTML. Al publicar apareció una página sin estilos y probamos un archivo CSS generado como solución temporal. Después decidí volver al CDN porque es el método que aprendí en Riwi y puedo explicarlo mejor.
+
+El proyecto actual **no incluye `output.css`**. Si el diseño vuelve a desaparecer, revisaré la carga del script en Network y Console de las herramientas del navegador. No se ha confirmado la causa exacta de aquella falla.
