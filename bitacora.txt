@@ -12,11 +12,10 @@ prefiero explicar con ejemplos de mi propia página.
 [AJUSTE PENDIENTE] = todavía hay una diferencia con el enunciado.
 
 NOTA SOBRE EL ALCANCE
-El profesor nos autorizó usar Tailwind directamente por CDN y no instalarlo
-con la CLI. También indicó que podíamos omitir la implementación completa
-de Bootstrap. En esta versión solo dejé una práctica sencilla de Bootstrap,
-por lo que no voy a presentar como realizados el carrusel, el modal,
-la compilación de Tailwind, @theme o los archivos output.css.
+El profesor autorizó practicar Tailwind mediante CDN. Para publicar corregí
+la carga de estilos y generé nocturna/output.css con Tailwind CSS, que ahora
+viaja junto a los HTML. Bootstrap sigue siendo una práctica mínima: un badge.
+No presento como realizado un carrusel, modal o compilación con --watch.
 
 ============================================================
 SEMANA 1 — DE LAS PRIMERAS PÁGINAS A UNA WEB ORDENADA
@@ -273,7 +272,7 @@ Pruebas requeridas de 360, 768 y 1280 px:
 
 16. Práctica corta con Bootstrap
 El profesor permitió omitir el desarrollo completo con Bootstrap.
-Usé un aviso con las clases alert alert-warning de Bootstrap 5.3.3
+Usé un badge de Bootstrap 5.3.3 con las clases badge text-bg-warning
 en nocturna/index.html; el diseño general sigue con Tailwind CSS.
 No instalé menús colapsables, carrusel automático, mensajes por campo
 ni modal de políticas en las páginas principales: no voy a afirmar
@@ -290,10 +289,10 @@ nocturna/componentes.html: ejemplo de botones principal/secundario/
 contorno, tarjeta, tres tipos de alertas, correo y celular.
 nocturna/index.html: página final con rutas, pasos e inscripción.
 
-Usé Tailwind desde CDN, tal como indicó el profesor. No existen
-src/input.css ni src/output.css compilados porque esta versión no usa
-Tailwind CLI. Por lo mismo, no hay resultados de --watch, @theme,
-@apply ni --minify que pueda registrar como mediciones propias.
+Durante el aprendizaje utilicé Tailwind por CDN. Para entregar la versión
+publicada agregué nocturna/output.css, generado con el compilador de
+Tailwind CSS. No utilicé --watch ni @apply durante esos ejercicios,
+y no presento mediciones de esos comandos como propias.
 
 18. Una diferencia que entendí
 Con Bootstrap un botón puede usar btn btn-success, porque el componente
@@ -350,13 +349,13 @@ inscribe realmente a nadie.
 Aspecto             Bootstrap                   Tailwind
 Aprendizaje         rápido con componentes       más clases que aprender
 Personalización     apariencia predeterminada    diseño más libre
-Tamaño de descarga  no medido en este trabajo    no medido (uso CDN)
+Tamaño de descarga  no medido en este trabajo    no medido (CSS local)
 Uso recomendado     maquetas y componentes       una landing con estilo propio
 
 Para esta versión mantendría CSS propio en las páginas principales y
 Tailwind en Nocturna, porque me resulta más sencillo identificar la
-responsabilidad de cada herramienta. Las dos bibliotecas se cargan por
-CDN donde se usan. No comparo kilobytes inventados: si el profesor
+responsabilidad de cada herramienta. Tailwind utiliza CSS local;
+Bootstrap sigue usando CDN para su badge. Si el profesor
 pide cifras reales, hay que medir recursos con DevTools > Network.
 
 ============================================================
@@ -404,7 +403,7 @@ Revisión directa del repositorio:
   mediante aria-hidden="true" porque son adornos.
 - 2 tablas de tarifas tienen caption, thead y tbody; encontré 15 scope.
 - Existen estilos :focus-visible y cortes responsive de 768 y 1200 px.
-- Rueda Nocturna combina Tailwind CDN con un aviso de Bootstrap.
+- Rueda Nocturna usa Tailwind compilado en output.css y un badge de Bootstrap.
 
 Prueba de validaciones:
 - Chromium en modo headless, con controles reproducidos desde los
@@ -445,7 +444,7 @@ continúa entre 0 y 3. La inscripción solo muestra un mensaje de prueba.
 MiniReto 10. Las tres páginas principales ya tienen enlace a Rueda Nocturna.
 Desde la landing se puede regresar al inicio y ahora también ir a Reservas.
 El aviso pequeño de Bootstrap se mantiene en la landing; el resto se diseña
-con Tailwind por CDN como indicó el profesor.
+con Tailwind compilado en output.css para la publicación.
 
 MiniReto 11. Añadí tres planes con los precios del enunciado. Usé Grid para
 las columnas y Flexbox para dejar los botones abajo. Pareja tiene un borde
@@ -469,5 +468,18 @@ PENDIENTE DE COMPROBAR EN VS CODE / DEVTOOLS:
 - Verificar todos los enlaces en GitHub Pages y guardar capturas reales.
 - Ensayar la demo con cronómetro y anotar el comentario del compañero.
 
-No se afirma que se hizo el carrusel completo de Bootstrap ni que se creó
-output.css: el profesor permitió trabajar con Tailwind CDN y Bootstrap mínimo.
+No se afirma que se hizo el carrusel completo de Bootstrap: se practicó
+un badge. El archivo output.css se añadió después para publicar los estilos.
+
+
+ACTUALIZACIÓN DE PUBLICACIÓN — CSS ESTÁTICO (16 NOV 2026)
+Problema detectado: al abrir GitHub Pages algunos estilos no aparecían
+porque el cargador JavaScript de Tailwind desde CDN no siempre se ejecutaba.
+Solución aplicada: compilé las utilidades usadas en la landing, el kit
+y el prototipo con Tailwind CSS v4.1.10 y subí nocturna/output.css.
+Los tres HTML enlazan el CSS por ruta relativa, sin cambiar su estructura.
+La hoja incluye estilos responsive sm:, md:, lg: y preferencias dark:.
+Comprobación local con Chromium sobre CSS compilado: 360, 768 y 1280 px,
+con dos esquemas de color; columnas y colores se aplicaron correctamente.
+Pendiente: comprobar GitHub Pages completo (imágenes, enlaces, formularios)
+y anotar resultados de W3C, Network y DevTools del navegador del alumno.

@@ -23,11 +23,11 @@ Proyecto de práctica de HTML, CSS y Tailwind CSS que hice en Riwi. La idea es m
 
 - HTML semántico para ordenar el contenido.
 - CSS, Flexbox y Grid en las páginas principales.
-- Tailwind CSS por CDN en Rueda Nocturna: colores, espacios, tarjetas, `sm:`, `md:`, `lg:` y `dark:`.
+- Tailwind CSS compilado en `nocturna/output.css`: colores, espacios, tarjetas, `sm:`, `md:`, `lg:` y `dark:`.
 - Bootstrap: un pequeño `badge` de práctica en la landing, no todo el diseño.
 - Git y GitHub para guardar los avances.
 
-En clase utilizamos Tailwind con CDN por indicación del profesor. Por eso esta versión **no genera `output.css`** ni utiliza `@theme` de Tailwind v4. Los colores del sitio principal y de la campaña nocturna comparten la identidad verde y azul; la landing agrega amarillo para destacar las acciones. Se usan Montserrat y Open Sans.
+En clase utilizamos Tailwind con CDN por indicación del profesor. Para corregir el problema de estilos al publicar, ahora el proyecto incluye **`nocturna/output.css` compilado con Tailwind CSS**, sin depender del script CDN en el navegador. No requiere compilar nada al abrirlo. Los colores del sitio principal y de la campaña nocturna comparten la identidad verde y azul; la landing agrega amarillo para destacar las acciones. Se usan Montserrat y Open Sans.
 
 ## Rueda Nocturna
 
@@ -52,7 +52,7 @@ Elegí Tailwind para la landing porque me facilita poner espacios, colores y col
 3. Abre `index.html` con Live Server.
 4. Entra en Rueda Nocturna desde el menú.
 
-Se necesita internet para cargar Tailwind, Bootstrap y las fuentes desde CDN.
+Tailwind se carga desde `nocturna/output.css`, incluido en el repositorio. Bootstrap y las fuentes usan CDN; el badge tiene un estilo de respaldo local.
 
 ## Comprobaciones finales
 
