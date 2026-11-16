@@ -71,3 +71,11 @@ El proyecto actual **no incluye `output.css`**. Si el diseño vuelve a desaparec
 Después de retirar output.css, comprobamos que el diseño podía seguir sin aparecer. Se cambió el enlace del CDN de Tailwind v3 al CDN oficial de Tailwind v4 alojado en jsDelivr. Todas las clases siguen en los HTML y no hay CSS compilado. La configuración de las fuentes Montserrat y Open Sans se conserva en un bloque pequeño @theme dentro del head de cada página.
 
 El código queda preparado para descargar Tailwind desde esa dirección, pero sigue necesitando conexión. La causa exacta del error del navegador aún no está confirmada. También hay que comprobar el zoom de Chrome con Ctrl + 0 y revisar la pestaña Network si los estilos no aparecen.
+
+## Corrección de los colores (16 de noviembre de 2026)
+
+Al revisar la landing publicada, los fondos azul oscuro se veían, pero algunas letras eran negras, los enlaces salían azules y la parte de las rutas aparecía blanca. La causa fue un conflicto entre el CSS de Bootstrap y Tailwind v4. Bootstrap estaba cargado sin una capa CSS y algunas reglas se imponían a las clases de Tailwind.
+
+Dejé Bootstrap únicamente para el pequeño badge «Jueves a sábado», pero lo cargué dentro de una capa llamada `bootstrap`, antes de las utilidades de Tailwind. Así las clases de Tailwind vuelven a controlar los colores y el modo oscuro. No cambié el formulario, los planes, las rutas ni las imágenes.
+
+El HTML sigue usando Tailwind por CDN y **no hay `output.css`**. El orden de capas se definió dentro del `head`, sin crear archivos adicionales. Falta revisar la versión pública completa en Chrome, con los dos modos de color y las comprobaciones de accesibilidad.

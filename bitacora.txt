@@ -574,3 +574,41 @@ No afirmo que el CDN anterior fuera la causa definitiva. Todavía hay
 que abrir GitHub Pages, pulsar Ctrl + 0 para restablecer el zoom y
 revisar F12 > Network y Console. Si el script está bloqueado también
 puede fallar este nuevo enlace. No invento resultados de esas pruebas.
+
+============================================================
+16 NOVIEMBRE 2026 - CORRECCIÓN DE COLORES EN RUEDA NOCTURNA
+============================================================
+
+Problema:
+Al abrir la página en GitHub Pages, el fondo del recorrido era azul,
+pero algunas letras aparecían negras y los enlaces azules. La sección
+de rutas también tenía un fondo blanco que no combinaba con el diseño.
+El contraste era malo y la página no parecía la que había construido.
+
+Causa que encontré:
+Estaba utilizando Tailwind v4 y una hoja de Bootstrap en el mismo HTML.
+Bootstrap aplica estilos generales al body, los títulos y los enlaces.
+Tailwind v4 organiza sus utilidades en capas CSS. Como Bootstrap se
+había cargado por fuera de esas capas, algunas propiedades de Bootstrap
+tenían prioridad y tapaban los colores que escribí con Tailwind.
+
+Cómo lo corregí:
+Conservé Tailwind por CDN y los mismos colores. No creé output.css.
+Dejé Bootstrap para la etiqueta «Jueves a sábado», pero lo puse dentro
+de una capa CSS llamada bootstrap. Esa capa está antes de las utilidades
+de Tailwind, por lo que las clases de Tailwind tienen prioridad para
+los colores, fondos y enlaces. También corregí el comentario de un
+aviso: ya estaba hecho con Tailwind, no con Bootstrap.
+
+Qué aprendí:
+No basta con que las clases estén bien escritas: dos bibliotecas CSS
+pueden cambiar las mismas propiedades. El orden y las capas importan.
+Ahora sé que debo revisar primero los estilos que se están pisando
+antes de añadir archivos grandes o reemplazar todo el diseño.
+
+Verificación:
+Probé la prioridad entre reglas de Bootstrap y Tailwind en un ejemplo
+local de Chromium, confirmando que las clases de la capa de utilidades
+pueden mantener sus colores. Aún debo comprobar el aspecto completo
+publicado en mi navegador y revisar modo claro, modo oscuro, enlaces
+y formulario. No inventé tiempos de trabajo ni resultados de W3C.
