@@ -611,4 +611,4 @@ Probé la prioridad entre reglas de Bootstrap y Tailwind en un ejemplo
 local de Chromium, confirmando que las clases de la capa de utilidades
 pueden mantener sus colores. Aún debo comprobar el aspecto completo
 publicado en mi navegador y revisar modo claro, modo oscuro, enlaces
-y formulario. No inventé tiempos de trabajo ni resultados de W3C.
+y formulario.
