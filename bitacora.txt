@@ -147,8 +147,8 @@ La regla CSS :focus-visible sí existe.
 Decisiones que sí puedo señalar en los archivos:
 - Idioma lang="es" para indicar el idioma de lectura.
 - Un h1 y un main por archivo HTML de esta entrega.
-- Alt descriptivo en las fotos y el logo. Las flores decorativas usan
-  alt="" dentro de un contenedor con aria-hidden="true".
+- Alt descriptivo en las fotos y el logo. Las flores tienen una descripción
+  breve y están dentro de aria-hidden="true" porque son decorativas.
 - Enlaces con nombres comprensibles, como "Consultar tarifas".
 - Las etiquetas label están asociadas a sus campos mediante for e id.
 - aria-current="page" distingue el enlace del menú actual.
@@ -157,8 +157,8 @@ Decisiones que sí puedo señalar en los archivos:
   los enlaces externos que lo necesitan.
 
 Hallazgos y medidas de revisión (cinco como mínimo):
-1) Las flores son decorativas y no necesitan descripción:
-   tienen alt="" dentro de aria-hidden="true". [HECHO EN CÓDIGO]
+1) Las flores decorativas tienen un alt corto y su contenedor utiliza
+   aria-hidden="true" para no repetir adornos al leer la página. [HECHO EN CÓDIGO]
 2) Las rutas entre carpetas se confunden fácilmente: organicé enlaces
    relativos, no rutas de Windows. [HECHO EN CÓDIGO]
 3) Las imágenes grandes pueden sobresalir: max-width:100% y height:auto.
@@ -400,7 +400,8 @@ Revisión directa del repositorio:
 - 78 referencias a archivos locales: ninguna ruta rota.
 - 24 enlaces internos con #: todos apuntan a elementos existentes.
 - 37 usos de img en los HTML; ninguno carece del atributo alt.
-- 15 flores tienen alt vacío porque solo decoran el fondo.
+- 15 flores tienen un alt breve y están ocultas para lectores de pantalla
+  mediante aria-hidden="true" porque son adornos.
 - 2 tablas de tarifas tienen caption, thead y tbody; encontré 15 scope.
 - Existen estilos :focus-visible y cortes responsive de 768 y 1200 px.
 - Rueda Nocturna combina Tailwind CDN con un aviso de Bootstrap.
