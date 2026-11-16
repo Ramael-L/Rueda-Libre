@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="es">
 
@@ -10,25 +9,41 @@
     <title>Rueda Nocturna | Rueda Libre</title>
     <!-- Bootstrap para el aviso. Tailwind para el diseño de la página. -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Open Sans', 'sans-serif'],
+                        heading: ['Montserrat', 'sans-serif']
+                    }
+                }
+            }
+        };
+    </script>
 </head>
 
-<body class="bg-[#101d32] text-white" >
+<body class="bg-[#e6eeea] dark:bg-[#101c2b] text-[#1d3440] dark:text-[#eaf3f2]" >
 
-    <header class="bg-[#1d2f45] p-5">
+    <header class="bg-[#c7dad4] dark:bg-[#243b4c] p-5">
 
         <div class="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-5">
 
-            <a href="../index.html" class="text-2xl font-bold text-[#FFD166]">
+            <a href="../index.html" class="text-2xl font-bold text-[#14513d] dark:text-[#FFD166]">
                 Rueda Libre
             </a>
 
             <nav aria-label="Navegación nocturna">
                 <ul class="flex flex-wrap gap-5">
-                    <li><a href="#home" class="hover:text-[#FFD166]">Inicio</a></li>
-                    <li><a href="#routes" class="hover:text-[#FFD166]">Rutas</a></li>
-                    <li><a href="#steps" class="hover:text-[#FFD166]">Cómo funciona</a></li>
-                    <li><a href="#registration" class="hover:text-[#FFD166]">Inscripción</a></li>
+                    <li><a href="#home" class="hover:text-[#14513d] dark:hover:text-[#FFD166]">Inicio</a></li>
+                    <li><a href="#routes" class="hover:text-[#14513d] dark:hover:text-[#FFD166]">Rutas</a></li>
+                    <li><a href="#plans" class="hover:text-[#14513d] dark:hover:text-[#FFD166]">Planes</a></li>
+                    <li><a href="#steps" class="hover:text-[#14513d] dark:hover:text-[#FFD166]">Cómo funciona</a></li>
+                    <li><a href="#registration" class="hover:text-[#14513d] dark:hover:text-[#FFD166]">Inscripción</a></li>
                 </ul>
             </nav>
 
@@ -40,15 +55,13 @@
 
         <!-- PRESENTACIÓN -->
 
-        <section id="home" class="bg-[#002574] px-5 py-20 text-center">
+        <section id="home" class="bg-[#b7d0c8] dark:bg-[#002574] px-5 py-20 text-center">
 
             <div class="mx-auto max-w-4xl">
 
-                <p class="mb-5 text-[#FFD166] font-semibold">
-                    Jueves a sábado
-                </p>
+                <span class="badge text-bg-warning mb-5">Jueves a sábado</span>
 
-                <h1 class="mb-6 text-4xl font-bold md:text-6xl">
+                <h1 class="font-heading mb-6 text-4xl font-bold md:text-6xl">
                     Rueda Nocturna
                 </h1>
 
@@ -62,8 +75,12 @@
                 </p>
 
                 <a href="#registration"
-                    class="inline-block rounded-lg bg-[#FFD166] px-8 py-3 font-bold text-[#1d2f45] hover:bg-white">
+                    class="inline-block rounded-lg bg-[#FFD166] px-8 py-3 font-bold text-[#1d2f45] hover:bg-[#ffe5a3]">
                     Inscríbete ahora
+                </a>
+                <a href="../paginas/reservas.html#bookings"
+                    class="ml-3 mt-3 inline-block rounded-lg border-2 border-[#14513d] px-8 py-3 font-bold text-[#14513d] hover:bg-[#d5e5de] dark:border-[#FFD166] dark:text-[#FFD166] dark:hover:bg-[#243b4c]">
+                    Reserva tu bici
                 </a>
 
             </div>
@@ -76,7 +93,7 @@
 
             <div class="mx-auto max-w-6xl">
 
-                <h2 class="mb-10 text-center text-3xl font-bold">
+                <h2 class="font-heading mb-10 text-center text-3xl font-bold">
                     Nuestras rutas nocturnas
                 </h2>
 
@@ -84,7 +101,7 @@
 
                     <!-- ruta del centro -->
 
-                    <article class="overflow-hidden rounded-xl bg-[#1d2f45] shadow-lg">
+                    <article class="overflow-hidden rounded-xl bg-[#c7dad4] dark:bg-[#243b4c] shadow-lg">
 
                         <img src="../img/bicycle-rental.png"
                             alt="Bicicleta para recorrer el centro de Medellín"
@@ -92,7 +109,7 @@
 
                         <div class="space-y-4 p-6">
 
-                            <h3 class="text-xl font-bold text-[#FFD166]">
+                            <h3 class="font-heading text-xl font-bold text-[#14513d] dark:text-[#FFD166]">
                                 Luces del Centro
                             </h3>
 
@@ -111,7 +128,7 @@
                             <p class="text-2xl font-bold">$55.000</p>
 
                             <a href="#registration"
-                                class="inline-block rounded-lg bg-[#1e7a4f] px-6 py-3 font-semibold hover:bg-[#17613f]">
+                                class="inline-block rounded-lg bg-[#FFD166] text-[#1d2f45] px-6 py-3 font-semibold hover:bg-[#ffe5a3]">
                                 Inscríbete
                             </a>
 
@@ -121,7 +138,7 @@
 
                     <!-- ruta de miradores de la ciudad -->
 
-                    <article class="overflow-hidden rounded-xl bg-[#1d2f45] shadow-lg">
+                    <article class="overflow-hidden rounded-xl bg-[#c7dad4] dark:bg-[#243b4c] shadow-lg">
 
                         <img src="../img/guided-bike-tour.png"
                             alt="Recorrido en bicicleta por Medellín"
@@ -129,7 +146,7 @@
 
                         <div class="space-y-4 p-6">
 
-                            <h3 class="text-xl font-bold text-[#FFD166]">
+                            <h3 class="font-heading text-xl font-bold text-[#14513d] dark:text-[#FFD166]">
                                 Miradores de la Ciudad
                             </h3>
 
@@ -148,7 +165,7 @@
                             <p class="text-2xl font-bold">$75.000</p>
 
                             <a href="#registration"
-                                class="inline-block rounded-lg bg-[#1e7a4f] px-6 py-3 font-semibold hover:bg-[#17613f]">
+                                class="inline-block rounded-lg bg-[#FFD166] text-[#1d2f45] px-6 py-3 font-semibold hover:bg-[#ffe5a3]">
                                 Inscríbete
                             </a>
 
@@ -158,7 +175,7 @@
 
                     <!-- ruta de las palmas -->
 
-                    <article class="overflow-hidden rounded-xl bg-[#1d2f45] shadow-lg">
+                    <article class="overflow-hidden rounded-xl bg-[#c7dad4] dark:bg-[#243b4c] shadow-lg">
 
                         <img src="../img/cycling-benefits.png"
                             alt="Recorrido en bicicleta por una zona montañosa"
@@ -166,7 +183,7 @@
 
                         <div class="space-y-4 p-6">
 
-                            <h3 class="text-xl font-bold text-[#FFD166]">
+                            <h3 class="font-heading text-xl font-bold text-[#14513d] dark:text-[#FFD166]">
                                 Luna en Las Palmas
                             </h3>
 
@@ -185,7 +202,7 @@
                             <p class="text-2xl font-bold">$95.000</p>
 
                             <a href="#registration"
-                                class="inline-block rounded-lg bg-[#1e7a4f] px-6 py-3 font-semibold hover:bg-[#17613f]">
+                                class="inline-block rounded-lg bg-[#FFD166] text-[#1d2f45] px-6 py-3 font-semibold hover:bg-[#ffe5a3]">
                                 Inscríbete
                             </a>
 
@@ -199,35 +216,81 @@
 
         </section>
 
+
+        <!-- PLANES -->
+        <section id="plans" class="bg-[#d5e5de] px-5 py-16 text-[#1d3440] dark:bg-[#192b3b] dark:text-[#eaf3f2]">
+            <div class="mx-auto max-w-6xl">
+                <h2 class="mb-3 text-center font-heading text-3xl font-bold text-[#14513d] dark:text-[#FFD166]">Planes Rueda Nocturna</h2>
+                <p class="mb-10 text-center">Elige cómo quieres vivir el recorrido.</p>
+                <div class="grid gap-6 lg:grid-cols-3">
+                    <article class="flex h-full flex-col rounded-xl border border-[#8ca99f] bg-[#e6eeea] p-6 dark:border-[#4d6571] dark:bg-[#243b4c]">
+                        <h3 class="mb-2 font-heading text-2xl font-bold text-[#14513d] dark:text-[#FFD166]">Individual</h3>
+                        <p class="mb-4 text-2xl font-bold">$55.000 <span class="text-sm font-normal">por persona</span></p>
+                        <ul class="mb-6 flex flex-col gap-3">
+                            <li>Bicicleta y casco</li>
+                            <li>Luces LED y chaleco</li>
+                            <li>Guía certificado</li>
+                            <li>Hidratación</li>
+                        </ul>
+                        <a href="#registration" class="mt-auto block rounded-lg bg-[#FFD166] px-6 py-3 text-center font-semibold text-[#1d2f45] hover:bg-[#ffe5a3] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#14513d] dark:focus-visible:outline-[#FFD166]">Elegir plan</a>
+                    </article>
+                    <article class="flex h-full flex-col rounded-xl border-4 border-[#14513d] bg-[#d0e4da] p-6 dark:border-[#FFD166] dark:bg-[#2c4657]">
+                        <p class="mb-4 w-fit rounded-full bg-[#14513d] px-3 py-1 text-sm font-semibold text-white dark:bg-[#FFD166] dark:text-[#1d2f45]">Más elegido</p>
+                        <h3 class="mb-2 font-heading text-2xl font-bold text-[#14513d] dark:text-[#FFD166]">Pareja</h3>
+                        <p class="mb-4 text-2xl font-bold">$99.000 <span class="text-sm font-normal">las dos personas</span></p>
+                        <ul class="mb-6 flex flex-col gap-3">
+                            <li>Todo lo del plan Individual</li>
+                            <li>Foto del recorrido</li>
+                            <li>Snack para dos</li>
+                            <li>Prioridad en la ruta</li>
+                        </ul>
+                        <a href="#registration" class="mt-auto block rounded-lg bg-[#FFD166] px-6 py-3 text-center font-semibold text-[#1d2f45] hover:bg-[#ffe5a3] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#14513d] dark:focus-visible:outline-[#FFD166]">Elegir plan</a>
+                    </article>
+                    <article class="flex h-full flex-col rounded-xl border border-[#8ca99f] bg-[#e6eeea] p-6 dark:border-[#4d6571] dark:bg-[#243b4c]">
+                        <h3 class="mb-2 font-heading text-2xl font-bold text-[#14513d] dark:text-[#FFD166]">Grupo (4 a 8)</h3>
+                        <p class="mb-4 text-2xl font-bold">$45.000 <span class="text-sm font-normal">por persona</span></p>
+                        <ul class="mb-6 flex flex-col gap-3">
+                            <li>Todo lo del plan Individual</li>
+                            <li>Guía exclusivo</li>
+                            <li>Horario a elección</li>
+                            <li>Fotos del grupo</li>
+                        </ul>
+                        <a href="#registration" class="mt-auto block rounded-lg bg-[#FFD166] px-6 py-3 text-center font-semibold text-[#1d2f45] hover:bg-[#ffe5a3] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#14513d] dark:focus-visible:outline-[#FFD166]">Elegir plan</a>
+                    </article>
+                </div>
+                <p class="mt-6 text-center text-sm">El formulario admite de 0 a 3 acompañantes. Los grupos de 5 a 8 requieren coordinación adicional.</p>
+            </div>
+        </section>
+
         <!-- preguntas frecuentes sobre rueda nocturna -->
 
-        <section id="steps" class="bg-[#1d2f45] px-5 py-16">
+        <section id="steps" class="bg-[#c7dad4] dark:bg-[#243b4c] px-5 py-16">
 
             <div class="mx-auto max-w-6xl">
 
-                <h2 class="mb-10 text-center text-3xl font-bold">
+                <h2 class="font-heading mb-10 text-center text-3xl font-bold">
                     ¿Cómo funciona?
                 </h2>
 
                 <ol class="grid gap-5 text-center sm:grid-cols-2 lg:grid-cols-4">
 
-                    <li class="rounded-lg border border-[#FFD166] p-6">
-                        <h3 class="font-bold text-[#FFD166]">1. Elige tu ruta</h3>
+                    <li class="rounded-lg border border-[#14513d] dark:border-[#FFD166] p-6">
+                        <h3 class="font-heading font-bold text-[#14513d] dark:text-[#FFD166]">1. Elige tu ruta</h3>
                         <p class="mt-3">Selecciona tu recorrido favorito.</p>
                     </li>
 
-                    <li class="rounded-lg border border-[#FFD166] p-6">
-                        <h3 class="font-bold text-[#FFD166]">2. Inscríbete</h3>
+                    <li class="rounded-lg border border-[#14513d] dark:border-[#FFD166] p-6">
+                        <h3 class="font-heading font-bold text-[#14513d] dark:text-[#FFD166]">2. Inscríbete</h3>
                         <p class="mt-3">Completa el formulario.</p>
                     </li>
 
-                    <li class="rounded-lg border border-[#FFD166] p-6">
-                        <h3 class="font-bold text-[#FFD166]">3. Recoge tu equipo</h3>
+                    <li class="rounded-lg border border-[#14513d] dark:border-[#FFD166] p-6">
+                        <h3 class="font-heading font-bold text-[#14513d] dark:text-[#FFD166]">3. Recoge tu equipo</h3>
                         <p class="mt-3">Prepárate para comenzar.</p>
                     </li>
 
-                    <li class="rounded-lg border border-[#FFD166] p-6">
-                        <h3 class="font-bold text-[#FFD166]">4. Rueda</h3>
+                    <li class="rounded-lg border border-[#14513d] dark:border-[#FFD166] p-6">
+                        <h3 class="font-heading font-bold text-[#14513d] dark:text-[#FFD166]">4. Rueda</h3>
                         <p class="mt-3">Disfruta de Medellín de noche.</p>
                     </li>
 
@@ -243,7 +306,7 @@
 
             <div class="mx-auto max-w-4xl">
 
-                <h2 class="mb-4 text-center text-3xl font-bold">
+                <h2 class="font-heading mb-4 text-center text-3xl font-bold">
                     Inscripción a Rueda Nocturna
                 </h2>
 
@@ -253,20 +316,19 @@
                 </p>
 
                 <!-- Aviso hecho con Bootstrap -->
-                <div class="alert alert-warning" role="note"
-                    style="background: #1d2f45; color: white; border: 1px solid #FFD166;">
+                <div class="rounded-lg border border-[#14513d] bg-[#d5e5de] p-4 text-[#1d3440] dark:border-[#FFD166] dark:bg-[#243b4c] dark:text-[#eaf3f2]" role="note">
                     Recuerda llevar casco, luces y elementos reflectivos al recorrido.
                 </div>
 
                 <form action="#registration" method="post"
-                    class="space-y-8 rounded-xl bg-[#1d2f45] p-6 md:p-10"
+                    class="space-y-8 rounded-xl bg-[#c7dad4] dark:bg-[#243b4c] p-6 md:p-10"
                     onsubmit="event.preventDefault(); alert('Formulario validado. Esta es una demostración académica; no se enviaron los datos.');">
 
                     <!-- informacion personal -->
 
                     <fieldset class="space-y-5">
 
-                        <legend class="mb-5 text-xl font-bold text-[#FFD166]">
+                        <legend class="mb-5 text-xl font-bold text-[#14513d] dark:text-[#FFD166]">
                             Datos personales
                         </legend>
 
@@ -280,7 +342,7 @@
                                 <input type="text" id="full-name" name="full-name"
                                     minlength="3" autocomplete="name" required
                                     placeholder="Escribe tu nombre"
-                                    class="w-full rounded-lg bg-white p-3 text-gray-900">
+                                    class="w-full rounded-lg bg-[#f1f5f2] p-3 text-[#1d3440] dark:bg-[#334b5b] dark:text-[#eaf3f2] focus-visible:outline-2 focus-visible:outline-[#14513d] dark:focus-visible:outline-[#FFD166]">
                             </div>
 
                             <div>
@@ -291,7 +353,7 @@
                                 <input type="email" id="email" name="email"
                                     autocomplete="email" required
                                     placeholder="correo@ejemplo.com"
-                                    class="w-full rounded-lg bg-white p-3 text-gray-900">
+                                    class="w-full rounded-lg bg-[#f1f5f2] p-3 text-[#1d3440] dark:bg-[#334b5b] dark:text-[#eaf3f2] focus-visible:outline-2 focus-visible:outline-[#14513d] dark:focus-visible:outline-[#FFD166]">
                             </div>
 
                             <div>
@@ -304,7 +366,7 @@
                                     inputmode="numeric" autocomplete="tel" required
                                     title="Ingresa 10 números y comienza por 3"
                                     placeholder="3001234567"
-                                    class="w-full rounded-lg bg-white p-3 text-gray-900">
+                                    class="w-full rounded-lg bg-[#f1f5f2] p-3 text-[#1d3440] dark:bg-[#334b5b] dark:text-[#eaf3f2] focus-visible:outline-2 focus-visible:outline-[#14513d] dark:focus-visible:outline-[#FFD166]">
                             </div>
 
                         </div>
@@ -315,11 +377,22 @@
 
                     <fieldset class="space-y-5">
 
-                        <legend class="mb-5 text-xl font-bold text-[#FFD166]">
+                        <legend class="mb-5 text-xl font-bold text-[#14513d] dark:text-[#FFD166]">
                             Información del recorrido
                         </legend>
 
                         <div class="grid gap-5 md:grid-cols-2">
+
+                            <div>
+                                <label for="selected-plan" class="mb-2 block">Selecciona un plan</label>
+                                <select id="selected-plan" name="selected-plan" required
+                                    class="w-full rounded-lg bg-[#f1f5f2] p-3 text-[#1d3440] dark:bg-[#334b5b] dark:text-[#eaf3f2] focus-visible:outline-2 focus-visible:outline-[#14513d] dark:focus-visible:outline-[#FFD166]">
+                                    <option value="">Selecciona una opción</option>
+                                    <option value="individual">Individual</option>
+                                    <option value="pareja">Pareja</option>
+                                    <option value="grupo">Grupo (4 a 8)</option>
+                                </select>
+                            </div>
 
                             <div>
                                 <label for="selected-route" class="mb-2 block">
@@ -327,7 +400,7 @@
                                 </label>
 
                                 <select id="selected-route" name="selected-route" required
-                                    class="w-full rounded-lg bg-white p-3 text-gray-900">
+                                    class="w-full rounded-lg bg-[#f1f5f2] p-3 text-[#1d3440] dark:bg-[#334b5b] dark:text-[#eaf3f2] focus-visible:outline-2 focus-visible:outline-[#14513d] dark:focus-visible:outline-[#FFD166]">
 
                                     <option value="">Selecciona una opción</option>
                                     <option value="centro">Luces del Centro</option>
@@ -343,7 +416,7 @@
                                 </label>
 
                                 <select id="selected-day" name="selected-day" required
-                                    class="w-full rounded-lg bg-white p-3 text-gray-900">
+                                    class="w-full rounded-lg bg-[#f1f5f2] p-3 text-[#1d3440] dark:bg-[#334b5b] dark:text-[#eaf3f2] focus-visible:outline-2 focus-visible:outline-[#14513d] dark:focus-visible:outline-[#FFD166]">
 
                                     <option value="">Selecciona un día</option>
                                     <option value="jueves">Jueves</option>
@@ -361,7 +434,7 @@
                                 <input type="number" id="companions"
                                     name="companions" min="0" max="3" required
                                     placeholder="De 0 a 3"
-                                    class="w-full rounded-lg bg-white p-3 text-gray-900">
+                                    class="w-full rounded-lg bg-[#f1f5f2] p-3 text-[#1d3440] dark:bg-[#334b5b] dark:text-[#eaf3f2] focus-visible:outline-2 focus-visible:outline-[#14513d] dark:focus-visible:outline-[#FFD166]">
                             </div>
 
                             <div>
@@ -370,7 +443,7 @@
                                 </label>
 
                                 <select id="experience" name="experience" required
-                                    class="w-full rounded-lg bg-white p-3 text-gray-900">
+                                    class="w-full rounded-lg bg-[#f1f5f2] p-3 text-[#1d3440] dark:bg-[#334b5b] dark:text-[#eaf3f2] focus-visible:outline-2 focus-visible:outline-[#14513d] dark:focus-visible:outline-[#FFD166]">
 
                                     <option value="">Selecciona tu nivel</option>
                                     <option value="principiante">Principiante</option>
@@ -388,7 +461,7 @@
 
                     <fieldset>
 
-                        <legend class="mb-4 text-xl font-bold text-[#FFD166]">
+                        <legend class="mb-4 text-xl font-bold text-[#14513d] dark:text-[#FFD166]">
                             ¿Tienes bicicleta propia?
                         </legend>
 
@@ -416,7 +489,7 @@
 
                     <fieldset>
 
-                        <legend class="mb-4 text-xl font-bold text-[#FFD166]">
+                        <legend class="mb-4 text-xl font-bold text-[#14513d] dark:text-[#FFD166]">
                             Condiciones de participación
                         </legend>
 
@@ -439,7 +512,7 @@
                     <div class="text-center">
 
                         <button type="submit"
-                            class="rounded-lg bg-[#FFD166] px-10 py-3 font-bold text-[#1d2f45] hover:bg-white">
+                            class="rounded-lg bg-[#FFD166] px-10 py-3 font-bold text-[#1d2f45] hover:bg-[#ffe5a3] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#14513d] dark:focus-visible:outline-[#FFD166]">
                             Revisar inscripción
                         </button>
 
@@ -455,12 +528,12 @@
 
     <!-- footer -->
 
-    <footer class="bg-[#1d2f45] px-5 py-10">
+    <footer class="bg-[#c7dad4] dark:bg-[#243b4c] px-5 py-10">
 
         <div class="mx-auto grid max-w-6xl gap-8 text-center md:grid-cols-3">
 
             <div>
-                <h2 class="mb-3 text-xl font-bold text-[#FFD166]">
+                <h2 class="font-heading mb-3 text-xl font-bold text-[#14513d] dark:text-[#FFD166]">
                     Rueda Libre
                 </h2>
 
@@ -468,7 +541,7 @@
             </div>
 
             <div>
-                <h2 class="mb-3 text-xl font-bold text-[#FFD166]">
+                <h2 class="font-heading mb-3 text-xl font-bold text-[#14513d] dark:text-[#FFD166]">
                     Contacto
                 </h2>
 
@@ -480,7 +553,7 @@
             </div>
 
             <div>
-                <h2 class="mb-3 text-xl font-bold text-[#FFD166]">
+                <h2 class="font-heading mb-3 text-xl font-bold text-[#14513d] dark:text-[#FFD166]">
                     Horarios
                 </h2>
 

@@ -1,150 +1,61 @@
- Rueda Libre
+# Rueda Libre
 
- About the Project
+Proyecto de práctica de HTML, CSS y Tailwind CSS que hice en Riwi. La idea es mostrar el alquiler de bicicletas y recorridos en Medellín. **Es una demostración académica**, no una empresa con reservas reales.
 
-Rueda Libre is my first web development project at RIWI. It is a website about bicycle rentals in Medellín.
+## Enlaces
 
-The website includes information about services, prices, routes, and reservations.
+- Repositorio: https://github.com/Ramael-L/Rueda-Libre
+- Sitio configurado en GitHub Pages: https://ramael-l.github.io/Rueda-Libre/
+- Rueda Nocturna: https://ramael-l.github.io/Rueda-Libre/nocturna/
 
-El objetivo de este proyecto fue aprender a crear una página web desde cero, utilizando una estructura organizada y aplicando buenas prácticas de programación.
+## Páginas
 
- Technologies
+- `index.html`: inicio, servicios, bicicletas y rutas.
+- `paginas/tarifas.html`: precios de alquiler y recorridos.
+- `paginas/reservas.html`: formulario de reserva de demostración.
+- `nocturna/index.html`: landing de recorridos nocturnos, planes e inscripción.
+- `nocturna/componentes.html`: ejemplos de botones, tarjetas, avisos y campos.
+- `nocturna/prototipo.html`: primera versión de la portada nocturna.
+- `css/styles.css` e `img/`: estilos e imágenes.
+- `bitacora.txt`: registro de trabajo y pruebas.
 
-- HTML5: To create the website structure.
-- CSS3: To design and style the website.
-- Flexbox: To organize elements.
-- Grid: To create layouts.
-- Tailwind CSS: To practice utility classes.
-- Git and GitHub: To save and manage my project.
+## Tecnologías
 
- My Learning Process
+- HTML semántico para ordenar el contenido.
+- CSS, Flexbox y Grid en las páginas principales.
+- Tailwind CSS por CDN en Rueda Nocturna: colores, espacios, tarjetas, `sm:`, `md:`, `lg:` y `dark:`.
+- Bootstrap: un pequeño `badge` de práctica en la landing, no todo el diseño.
+- Git y GitHub para guardar los avances.
 
-During this project, I learned how to use HTML, CSS, Flexbox, Grid, and Tailwind CSS.
+En clase utilizamos Tailwind con CDN por indicación del profesor. Por eso esta versión **no genera `output.css`** ni utiliza `@theme` de Tailwind v4. Los colores del sitio principal y de la campaña nocturna comparten la identidad verde y azul; la landing agrega amarillo para destacar las acciones. Se usan Montserrat y Open Sans.
 
-Aprendí a crear páginas conectadas, formularios con validaciones, tablas de precios y menús de navegación.
+## Rueda Nocturna
 
-I also learned how to organize my code and use semantic HTML tags correctly.
+Tiene tres rutas: Luces del Centro, Miradores de la Ciudad y Luna en Las Palmas.
 
-También aprendí a utilizar Git y GitHub para guardar versiones de mi proyecto y solucionar algunos errores.
+Planes: Individual ($55.000 por persona), Pareja ($99.000 las dos personas) y Grupo de 4 a 8 ($45.000 por persona). El plan Pareja se muestra como «Más elegido».
 
- HTML Semantics
+La inscripción pide nombre, correo, celular, ruta, plan, día, acompañantes (0 a 3), experiencia, bicicleta propia y condiciones. Los campos tienen validación nativa del navegador. Para grupos de 5 a 8 hace falta coordinar el resto por separado, ya que el formulario limita los acompañantes a tres.
 
-One of the most important things I learned was how to use semantic HTML.
+**El formulario no guarda ni envía información a un servidor**: muestra un aviso cuando los campos son válidos.
 
-La semántica HTML consiste en utilizar las etiquetas correctas según la función del contenido. Esto permite crear páginas más organizadas, accesibles y fáciles de entender.
+## ¿Qué aprendí?
 
-For example, I learned to use `header` for the introduction, `nav` for navigation, `main` for the principal content, and `footer` for additional information.
+Aprendí a separar las páginas por carpetas, crear enlaces relativos y elegir etiquetas HTML apropiadas. Lo más difícil fue organizar el formulario y conseguir que los elementos se acomodaran tanto en celular como en escritorio.
 
-También aprendí que no todas las etiquetas tienen el mismo propósito y que es importante respetar la estructura del documento.
+Elegí Tailwind para la landing porque me facilita poner espacios, colores y columnas directamente con clases. Para el resto del sitio mantuve CSS propio, que me permite practicar los selectores y las variables. Bootstrap se usa solo como ejemplo de componente listo para utilizar.
 
- My Difficulties
+## Cómo abrirlo
 
-The most difficult part for me was CSS, especially Flexbox, Grid, spacing, and responsive design.
+1. Descarga o clona el repositorio.
+2. Abre la carpeta en Visual Studio Code.
+3. Abre `index.html` con Live Server.
+4. Entra en Rueda Nocturna desde el menú.
 
-Me costaba organizar los elementos, centrar botones, trabajar con contenedores y adaptar la página a diferentes pantallas.
+Se necesita internet para cargar Tailwind, Bootstrap y las fuentes desde CDN.
 
-Another challenge was understanding HTML semantics and choosing the correct tags.
+## Comprobaciones finales
 
-También tuve problemas con Git y GitHub, especialmente con los commits, las ramas, los repositorios y los conflictos al subir archivos.
+Los enlaces y la estructura pueden revisarse en el código. Antes de dar la entrega por comprobada todavía hay que verificar en navegador: modo claro/oscuro, teclado, campos válidos e inválidos, 360/768/1280 px, W3C y GitHub Pages. Las capturas y los resultados del cronómetro se añadirán solo después de realizarlos.
 
-I made mistakes, but I learned how to solve many of them with practice.
-
- What I Learned
-
-I learned that programming is not only about writing code. It is also about solving problems and organizing ideas.
-
-Este proyecto me ayudó a comprender mejor la estructura de una página web, mejorar mi lógica y aprender a identificar errores.
-
-I still need to improve my JavaScript skills, but now I feel more confident using HTML and CSS.
-
-Important HTML Tags
-
-Estas son algunas de las etiquetas más importantes que aprendí durante el proyecto.
-
-- `html`: Defines the HTML document.
-- `head`: Contains information about the page.
-- `title`: Defines the page title.
-- `body`: Contains the visible content.
-- `header`: Represents the introductory content.
-- `nav`: Contains navigation links.
-- `main`: Contains the principal content.
-- `section`: Groups related content by topic.
-- `article`: Represents independent content.
-- `aside`: Contains complementary information.
-- `footer`: Contains footer information.
-- `h1` to `h6`: Define headings and their hierarchy.
-- `p`: Defines a paragraph.
-- `a`: Creates a link.
-- `img`: Displays an image.
-- `ul`, `ol`, `li`: Create lists.
-- `table`: Creates a table.
-- `caption`: Describes a table.
-- `thead`, `tbody`, `tr`, `th`, `td`: Organize table information.
-- `form`: Creates a form.
-- `label`: Describes a form field.
-- `input`: Creates an input field.
-- `select`: Creates a selection menu.
-- `textarea`: Creates a text area.
-- `button`: Creates an interactive button.
-- `fieldset` and `legend`: Group and describe related form fields.
-
- Important CSS and Git Terms
-
-- `class`: Identifies elements that can share styles.
-- `id`: Identifies a specific element.
-- `display`: Defines how an element is displayed.
-- `flex`: Helps organize elements in one direction.
-- `grid`: Organizes elements in rows and columns.
-- `gap`: Creates space between elements.
-- `margin`: Creates space outside an element.
-- `padding`: Creates space inside an element.
-- `hover`: Applies styles when the pointer is over an element.
-- `media query`: Changes styles depending on screen characteristics.
-- `responsive design`: Adapts a website to different screen sizes.
-- `git add`: Prepares changes.
-- `git commit`: Saves changes in the local history.
-- `git push`: Uploads commits to the remote repository.
-- `git pull`: Downloads and integrates remote changes.
-
-Conclusion
-
-Rueda Libre was an important experience in my learning process.
-
-Although I had many difficulties, I learned how to create a website using semantic HTML and CSS.
-
-Aprendí que cometer errores es parte del proceso y que practicar constantemente me ayuda a mejorar.
-
-This project helped me develop my skills, understand web development, and feel more confident as a beginner programmer.
-
-I know I still have many things to learn, but I am happy with my progress.
-
- Developer
-
-Ramael Gonzalez Florez
-
-RIWI - Clan Tesla - Jornada AM
-
-2026
-
-## Project structure / Estructura
-
-- `index.html`: home page (inicio).
-- `paginas/tarifas.html`: prices and guided routes.
-- `paginas/reservas.html`: academic reservation form.
-- `nocturna/`: Tailwind night cycling campaign.
-- `css/styles.css`: shared styles.
-- `img/`: project images with descriptive kebab-case names.
-- `bitacora.txt`: learning log and test notes.
-
-**Note / Nota:** Los formularios son demostraciones académicas. No registran reservas reales.
-
-
-## Nombres de código / Code naming
-
-Las clases CSS, variables, identificadores HTML y nombres de los controles siguen la convención en inglés y kebab-case, como `services-grid`, `booking-layout` y `--route-green`. Los textos visibles permanecen en español para los visitantes.
-
-Las cinco imágenes decorativas usan `alt=""` dentro de `aria-hidden="true"`: no son imágenes informativas y por eso no necesitan una descripción leída por lectores de pantalla.
-
-## Comprobaciones pendientes de navegador
-
-Probar con Live Server: enlaces de navegación, envío de formularios con datos inválidos y válidos, navegación con Tab, visualización a 360/768/1280 px y publicación final. Los formularios son demostraciones sin backend.
+**Autor:** Ramael Gonzalez Florez — Clan Tesla, jornada AM — Riwi 2026.

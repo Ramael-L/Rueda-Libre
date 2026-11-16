@@ -432,3 +432,41 @@ Pruebas que siguen pendientes en el sitio completo:
 - Confirmar una URL pública de GitHub Pages si el sitio está publicado.
 
 No se presentan estas pruebas pendientes como si estuvieran hechas.
+
+============================================================
+MINIRETOS 9–12 — AJUSTES DE RUEDA NOCTURNA (15 NOV 2026)
+============================================================
+
+MiniReto 9. Conservé el formulario con sus etiquetas, conjuntos de campos y
+validaciones nativas. Agregué la selección del plan; el número de acompañantes
+continúa entre 0 y 3. La inscripción solo muestra un mensaje de prueba.
+
+MiniReto 10. Las tres páginas principales ya tienen enlace a Rueda Nocturna.
+Desde la landing se puede regresar al inicio y ahora también ir a Reservas.
+El aviso pequeño de Bootstrap se mantiene en la landing; el resto se diseña
+con Tailwind por CDN como indicó el profesor.
+
+MiniReto 11. Añadí tres planes con los precios del enunciado. Usé Grid para
+las columnas y Flexbox para dejar los botones abajo. Pareja tiene un borde
+más grueso y la etiqueta «Más elegido». Los botones principales son amarillos.
+Agregué colores de día y de noche con dark: en los tres HTML de nocturna.
+
+MiniReto 12. Organicé el README con enlaces, páginas y tecnologías.
+NO doy por aprobadas pruebas que aún no he hecho directamente en el navegador.
+
+TIEMPOS REALES (llenar al realizar los ejercicios con cronómetro):
+- MiniReto 9: pendiente.
+- MiniReto 10: pendiente.
+- MiniReto 11: pendiente.
+- MiniReto 12 y demo de 3 minutos: pendiente.
+
+PENDIENTE DE COMPROBAR EN VS CODE / DEVTOOLS:
+- Formulario vacío, inválido, válido y recorrido con Tab / Shift+Tab.
+- Pantallas de 360, 768 y 1280 px, y modo claro y oscuro.
+- Medidas de las tres tarjetas en Computed (ancho y padding).
+- Validación W3C de nocturna/index.html y paginas/reservas.html.
+- Verificar todos los enlaces en GitHub Pages y guardar capturas reales.
+- Ensayar la demo con cronómetro y anotar el comentario del compañero.
+
+No se afirma que se hizo el carrusel completo de Bootstrap ni que se creó
+output.css: el profesor permitió trabajar con Tailwind CDN y Bootstrap mínimo.

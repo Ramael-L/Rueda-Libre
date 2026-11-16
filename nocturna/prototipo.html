@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="es">
 
@@ -9,23 +8,38 @@
     <title>Prototipo | Rueda Nocturna</title>
     <meta name="description" content="Prototipo de recorridos nocturnos en bicicleta de Rueda Libre.">
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Open Sans', 'sans-serif'],
+                        heading: ['Montserrat', 'sans-serif']
+                    }
+                }
+            }
+        };
+    </script>
 </head>
 
-<body class="bg-[#101d32] text-white">
+<body class="bg-[#e6eeea] dark:bg-[#101c2b] text-[#1d3440] dark:text-[#eaf3f2]">
 
     <main>
         
 
-        <section class="bg-[#002574] px-5 py-20 text-center">
+        <section class="bg-[#b7d0c8] dark:bg-[#002574] px-5 py-20 text-center">
 
             <div class="mx-auto max-w-4xl">
 
-                <p class="mb-5 font-semibold text-[#FFD166]">
+                <p class="mb-5 font-semibold text-[#14513d] dark:text-[#FFD166]">
                     Nuevo · Jueves a sábado
                 </p>
 
-                <h1 class="mb-6 text-4xl font-bold md:text-6xl">
+                <h1 class="font-heading mb-6 text-4xl font-bold md:text-6xl">
                     Rueda Nocturna
                 </h1>
 
@@ -46,7 +60,7 @@
                 </div>
 
                 <a href="index.html#registration"
-                    class="inline-block rounded-lg bg-[#FFD166] px-8 py-3 font-bold text-[#1d2f45] hover:bg-white">
+                    class="inline-block rounded-lg bg-[#FFD166] px-8 py-3 font-bold text-[#1d2f45] hover:bg-[#ffe5a3]">
                     Inscríbete
                 </a>
 

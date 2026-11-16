@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="es">
 
@@ -9,23 +8,38 @@
     <title>Componentes | Rueda Nocturna</title>
     <meta name="description" content="Kit de componentes Tailwind de la campaña Rueda Nocturna.">
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Open Sans', 'sans-serif'],
+                        heading: ['Montserrat', 'sans-serif']
+                    }
+                }
+            }
+        };
+    </script>
 </head>
 
-<body class="bg-[#101d32] text-white">
+<body class="bg-[#e6eeea] dark:bg-[#101c2b] text-[#1d3440] dark:text-[#eaf3f2]">
 
     <!-- ENCABEZADO -->
 
-    <header class="bg-[#1d2f45] px-5 py-6">
+    <header class="bg-[#c7dad4] dark:bg-[#243b4c] px-5 py-6">
 
         <div class="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-4">
 
-            <h1 class="text-2xl font-bold text-[#FFD166]">
+            <h1 class="font-heading text-2xl font-bold text-[#14513d] dark:text-[#FFD166]">
                 Kit de componentes
             </h1>
 
             <a href="index.html"
-                class="rounded-lg bg-[#FFD166] px-5 py-2 font-semibold text-[#1d2f45] hover:bg-white focus-visible:outline focus-visible:outline-4 focus-visible:outline-white">
+                class="rounded-lg bg-[#FFD166] px-5 py-2 font-semibold text-[#1d2f45] hover:bg-[#ffe5a3] focus-visible:outline focus-visible:outline-4 focus-visible:outline-white">
                 Volver a Rueda Nocturna
             </a>
 
@@ -39,7 +53,7 @@
 
         <section>
 
-            <h2 class="mb-6 text-2xl font-bold">
+            <h2 class="font-heading mb-6 text-2xl font-bold">
                 Botones
             </h2>
 
@@ -51,17 +65,17 @@
             <div class="flex flex-wrap items-center gap-5">
 
                 <a href="index.html#registration"
-                    class="inline-block rounded-lg bg-[#1e7a4f] px-6 py-3 font-semibold text-white hover:bg-[#17613f] focus-visible:outline focus-visible:outline-4 focus-visible:outline-[#FFD166]">
+                    class="inline-block rounded-lg bg-[#FFD166] px-6 py-3 font-semibold text-[#1d2f45] hover:bg-[#ffe5a3] focus-visible:outline focus-visible:outline-4 focus-visible:outline-[#14513d] dark:focus-visible:outline-[#FFD166]">
                     Principal
                 </a>
 
                 <a href="index.html#routes"
-                    class="inline-block rounded-lg bg-[#FFD166] px-6 py-3 font-semibold text-[#1d2f45] hover:bg-white focus-visible:outline focus-visible:outline-4 focus-visible:outline-white">
+                    class="inline-block rounded-lg bg-[#FFD166] px-6 py-3 font-semibold text-[#1d2f45] hover:bg-[#ffe5a3] focus-visible:outline focus-visible:outline-4 focus-visible:outline-white">
                     Secundario
                 </a>
 
                 <a href="index.html"
-                    class="inline-block rounded-lg border-2 border-[#FFD166] px-6 py-3 font-semibold text-[#FFD166] hover:bg-[#FFD166] hover:text-[#1d2f45] focus-visible:outline focus-visible:outline-4 focus-visible:outline-white">
+                    class="inline-block rounded-lg border-2 border-[#14513d] dark:border-[#FFD166] px-6 py-3 font-semibold text-[#14513d] dark:text-[#FFD166] hover:bg-[#FFD166] hover:text-[#1d2f45] focus-visible:outline focus-visible:outline-4 focus-visible:outline-white">
                     Contorno
                 </a>
 
@@ -73,7 +87,7 @@
 
         <section>
 
-            <h2 class="mb-6 text-2xl font-bold">
+            <h2 class="font-heading mb-6 text-2xl font-bold">
                 Tarjeta de ruta
             </h2>
 
@@ -82,7 +96,7 @@
                 los recorridos nocturnos.
             </p>
 
-            <article class="max-w-sm overflow-hidden rounded-xl bg-[#1d2f45] shadow-lg">
+            <article class="max-w-sm overflow-hidden rounded-xl bg-[#c7dad4] dark:bg-[#243b4c] shadow-lg">
 
                 <img src="../img/bicycle-rental.png"
                     alt="Bicicleta para un recorrido nocturno por el centro"
@@ -90,7 +104,7 @@
 
                 <div class="space-y-4 p-6">
 
-                    <h3 class="text-xl font-bold text-[#FFD166]">
+                    <h3 class="font-heading text-xl font-bold text-[#14513d] dark:text-[#FFD166]">
                         Luces del Centro
                     </h3>
 
@@ -104,7 +118,7 @@
 
                     <p>
                         <strong>Nivel:</strong>
-                        <span class="rounded-lg bg-[#1e7a4f] px-3 py-1 text-sm">
+                        <span class="rounded-lg bg-[#FFD166] text-[#1d2f45] px-3 py-1 text-sm">
                             Fácil
                         </span>
                     </p>
@@ -118,7 +132,7 @@
                     </p>
 
                     <a href="index.html#registration"
-                        class="inline-block rounded-lg bg-[#1e7a4f] px-6 py-3 font-semibold text-white hover:bg-[#17613f] focus-visible:outline focus-visible:outline-4 focus-visible:outline-[#FFD166]">
+                        class="inline-block rounded-lg bg-[#FFD166] px-6 py-3 font-semibold text-[#1d2f45] hover:bg-[#ffe5a3] focus-visible:outline focus-visible:outline-4 focus-visible:outline-[#14513d] dark:focus-visible:outline-[#FFD166]">
                         Inscríbete
                     </a>
 
@@ -132,7 +146,7 @@
 
         <section>
 
-            <h2 class="mb-6 text-2xl font-bold">
+            <h2 class="font-heading mb-6 text-2xl font-bold">
                 Alertas
             </h2>
 
@@ -143,9 +157,9 @@
 
             <div class="space-y-5">
 
-                <div class="rounded-lg border-l-4 border-blue-500 bg-blue-100 p-5 text-blue-900">
+                <div class="rounded-lg border-l-4 border-blue-500 bg-blue-100 p-5 text-blue-900 dark:bg-[#263e59] dark:text-[#eaf3f2]">
 
-                    <h3 class="mb-2 font-bold">
+                    <h3 class="font-heading mb-2 font-bold">
                         Información
                     </h3>
 
@@ -156,9 +170,9 @@
 
                 </div>
 
-                <div class="rounded-lg border-l-4 border-green-600 bg-green-100 p-5 text-green-900">
+                <div class="rounded-lg border-l-4 border-green-600 bg-green-100 p-5 text-green-900 dark:bg-[#24493e] dark:text-[#eaf3f2]">
 
-                    <h3 class="mb-2 font-bold">
+                    <h3 class="font-heading mb-2 font-bold">
                         Éxito
                     </h3>
 
@@ -169,9 +183,9 @@
 
                 </div>
 
-                <div class="rounded-lg border-l-4 border-yellow-500 bg-yellow-100 p-5 text-yellow-900">
+                <div class="rounded-lg border-l-4 border-yellow-500 bg-yellow-100 p-5 text-yellow-900 dark:bg-[#4a402e] dark:text-[#eaf3f2]">
 
-                    <h3 class="mb-2 font-bold">
+                    <h3 class="font-heading mb-2 font-bold">
                         Advertencia
                     </h3>
 
@@ -190,7 +204,7 @@
 
         <section>
 
-            <h2 class="mb-6 text-2xl font-bold">
+            <h2 class="font-heading mb-6 text-2xl font-bold">
                 Campos de formulario
             </h2>
 
@@ -199,7 +213,7 @@
                 las entradas de información en nuestros formularios.
             </p>
 
-            <div class="max-w-xl space-y-6 rounded-xl bg-[#1d2f45] p-6">
+            <div class="max-w-xl space-y-6 rounded-xl bg-[#c7dad4] dark:bg-[#243b4c] p-6">
 
                 <div>
 
@@ -213,7 +227,7 @@
                         placeholder="correo@ejemplo.com"
                         autocomplete="email"
                         aria-describedby="ayuda-correo"
-                        class="w-full rounded-lg border border-gray-400 bg-white p-3 text-[#1d2f45] focus-visible:outline focus-visible:outline-4 focus-visible:outline-[#FFD166]">
+                        class="w-full rounded-lg border border-gray-400 bg-[#f1f5f2] p-3 text-[#1d3440] dark:bg-[#334b5b] dark:text-[#eaf3f2] focus-visible:outline focus-visible:outline-4 focus-visible:outline-[#14513d] dark:focus-visible:outline-[#FFD166]">
 
                     <p id="ayuda-correo" class="mt-2 text-sm text-gray-300">
                         Ingresa un correo electrónico válido.
@@ -237,7 +251,7 @@
                         inputmode="numeric"
                         autocomplete="tel"
                         aria-describedby="ayuda-celular"
-                        class="w-full rounded-lg border border-gray-400 bg-white p-3 text-[#1d2f45] focus-visible:outline focus-visible:outline-4 focus-visible:outline-[#FFD166]">
+                        class="w-full rounded-lg border border-gray-400 bg-[#f1f5f2] p-3 text-[#1d3440] dark:bg-[#334b5b] dark:text-[#eaf3f2] focus-visible:outline focus-visible:outline-4 focus-visible:outline-[#14513d] dark:focus-visible:outline-[#FFD166]">
 
                     <p id="ayuda-celular" class="mt-2 text-sm text-gray-300">
                         Ingresa 10 números y comienza por 3.
@@ -253,7 +267,7 @@
 
     <!-- PIE DE PÁGINA -->
 
-    <footer class="bg-[#1d2f45] px-5 py-8 text-center">
+    <footer class="bg-[#c7dad4] dark:bg-[#243b4c] px-5 py-8 text-center">
 
         <p>
             Kit de componentes de Rueda Nocturna.
