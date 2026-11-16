@@ -65,3 +65,9 @@ Los enlaces y la estructura pueden revisarse en el código. Antes de dar la entr
 Primero usé el CDN de Tailwind y escribí clases directamente en los HTML. Al publicar apareció una página sin estilos y probamos un archivo CSS generado como solución temporal. Después decidí volver al CDN porque es el método que aprendí en Riwi y puedo explicarlo mejor.
 
 El proyecto actual **no incluye `output.css`**. Si el diseño vuelve a desaparecer, revisaré la carga del script en Network y Console de las herramientas del navegador. No se ha confirmado la causa exacta de aquella falla.
+
+## Segunda revisión del CDN (16 de noviembre de 2026)
+
+Después de retirar output.css, comprobamos que el diseño podía seguir sin aparecer. Se cambió el enlace del CDN de Tailwind v3 al CDN oficial de Tailwind v4 alojado en jsDelivr. Todas las clases siguen en los HTML y no hay CSS compilado. La configuración de las fuentes Montserrat y Open Sans se conserva en un bloque pequeño @theme dentro del head de cada página.
+
+El código queda preparado para descargar Tailwind desde esa dirección, pero sigue necesitando conexión. La causa exacta del error del navegador aún no está confirmada. También hay que comprobar el zoom de Chrome con Ctrl + 0 y revisar la pestaña Network si los estilos no aparecen.

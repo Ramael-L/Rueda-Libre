@@ -551,3 +551,26 @@ Revisé la estructura del código y las referencias al CDN.
 Queda pendiente comprobar en el navegador de la entrega que
 cargue correctamente, probar el formulario y revisar GitHub Pages.
 No registro tiempos ni pruebas que no haya medido.
+
+============================================================
+16 DE NOVIEMBRE DE 2026 - SEGUNDO INTENTO DE CORRECCIÓN DEL CDN
+============================================================
+
+Después de volver al enlace que usamos en clase, el usuario seguía viendo
+el portafolio sin sus colores y estilos. Esto muestra que no bastaba con
+retirar output.css. La causa exacta del problema no estaba comprobada.
+
+Para evitar volver a añadir un archivo compilado, cambié el enlace de
+Tailwind v3 por el CDN oficial de Tailwind v4 de jsDelivr. Sigo usando
+las clases directamente en el HTML. Los nombres de las fuentes se
+definen con @theme, dentro del head, para conservar font-heading y
+font-sans. No se creó output.css ni se cambió el diseño de los planes.
+
+Esta solución mantiene el método de practicar con un script CDN,
+pero la versión del framework cambia de v3 a v4. Es importante
+recordar esa diferencia al explicar el proyecto.
+
+No afirmo que el CDN anterior fuera la causa definitiva. Todavía hay
+que abrir GitHub Pages, pulsar Ctrl + 0 para restablecer el zoom y
+revisar F12 > Network y Console. Si el script está bloqueado también
+puede fallar este nuevo enlace. No invento resultados de esas pruebas.
